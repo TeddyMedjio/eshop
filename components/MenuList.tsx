@@ -16,7 +16,7 @@ import {
 
 export function Navigation() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Shop</NavigationMenuTrigger>
