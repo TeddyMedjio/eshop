@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function SliderLogos() {
   return (
     <div className="bg-black h-[92px] md:h-[100px] w-full flex items-center justify-center">
-      <div className="slider ">
+      <div className="slider">
         <div className="slide-track">
           {/* w-full flex items-center justify-center gap-10 */}
           <div className="relative  h-[38px] slide ">
