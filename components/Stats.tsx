@@ -27,7 +27,7 @@ export default function Stats() {
           <p className="font-[family-name:var(--satoshibold-)] text-[34px] md:text-[40px]">
             +<Simple />
           </p>
-          <p className="font-[family-name:var(--satoshi-)] text-xs md:text-base text-[#00000060]">
+          <p className="font-[family-name:var(--satoshi-)] text-xs md:text-base text-black/80">
             Brands Authentiques
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function Stats() {
           <p className="font-[family-name:var(--satoshibold-)] text-[34px] md:text-[40px]">
             +<SimpleHook />
           </p>
-          <p className="font-[family-name:var(--satoshi-)] text-xs md:text-base text-[#00000060]">
+          <p className="font-[family-name:var(--satoshi-)] text-xs md:text-base text-black/80">
             Produits de Qualités
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function Stats() {
           <p className="font-[family-name:var(--satoshibold-)] text-[34px] md:text-[40px]">
             +<SimpleH />
           </p>
-          <p className="font-[family-name:var(--satoshi-)] text-xs md:text-base text-[#00000060]">
+          <p className="font-[family-name:var(--satoshi-)] text-xs md:text-base text-black/80">
             Clients Satisfaits
           </p>
         </div>

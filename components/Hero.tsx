@@ -11,7 +11,7 @@ export default function Hero() {
           <h1 className="font-[family-name:var(--integralcf-)] text-black text-[36px] leading-[34px] md:text-[64px] md:leading-[64px]">
             find clothes that matches your style
           </h1>
-          <p className="text-[#00000060] text-sm md:text-base font-[family-name:var(--satoshi-)]">
+          <p className="text-black/80 text-sm md:text-base font-[family-name:var(--satoshi-)]">
             Parcourez notre gamme diversifiée de vêtements méticuleusement
             confectionnés, conçus pour faire ressortir votre individualité et
             répondre à votre sens du style.
