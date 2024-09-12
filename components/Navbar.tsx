@@ -2,7 +2,6 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { useState } from "react";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { MobileMenu } from "./MobileMenu";
@@ -10,8 +9,6 @@ import { ResearchMobile } from "./ResearchMobile";
 import { Navigation } from "./MenuList";
 
 export default function Navbar() {
-  const [show, setShow] = useState(false);
-
   return (
     <nav className="mx-auto container px-4 h-24 flex items-center justify-center">
       <div className="w-full flex items-center justify-between">

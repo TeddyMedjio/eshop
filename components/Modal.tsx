@@ -10,7 +10,7 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 
 export default function MyModal() {
-  let [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
 
   const closeModal = () => {
     setIsOpen(false);
