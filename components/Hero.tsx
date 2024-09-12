@@ -18,7 +18,7 @@ export default function Hero() {
           </p>
 
           {/* button */}
-          <button className=" w-full md:w-fit font-[family-name:var(--satoshi-)] px-14 py-4 bg-black text-white duration-300  hover:scale-90 rounded-full">
+          <button className=" w-full md:w-fit font-[family-name:var(--satoshi-)] px-14 py-4 bg-black text-white duration-300  hover:scale-95 rounded-xl">
             <Link href="/">Découvrir Plus</Link>
           </button>
           {/* statistiques */}

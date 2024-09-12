@@ -13,13 +13,17 @@ export default function Navinfo() {
     <>
       {hidden && (
         <div className="bg-black h-[38px] w-full flex items-center justify-center">
-          <div className="relative text-center mx-auto container">
-            <p className="font-[family-name:var(--satoshi-)] text-white text-sm ">
-              Inscrivez-vous et bénéficiez de 20% de réduction.{" "}
+          <div className="relative mx-auto container">
+            <div className="flex items-center justify-center gap-2">
+              <p className="font-[family-name:var(--satoshi-)] text-white text-sm ">
+                Inscrivez-vous et bénéficiez de 20% de réduction.{" "}
+              </p>
               <span className="underline font-semibold animate-pulse hidden md:block">
-                <Link href="#">Inscrivez-vous Maintenant</Link>
+                <Link href="#" className="text-white text-sm">
+                  Inscrivez-vous Maintenant
+                </Link>
               </span>
-            </p>
+            </div>
             <span
               onClick={handle}
               className="hidden md:block cursor-pointer absolute top-0 -translate-x-1/2 right-6 lg:right-5"

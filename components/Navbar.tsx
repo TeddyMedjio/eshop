@@ -1,21 +1,16 @@
 "use client";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { useState } from "react";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
-import { Bars3Icon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { MobileMenu } from "./MobileMenu";
 import { ResearchMobile } from "./ResearchMobile";
+import { Navigation } from "./MenuList";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
-
-  const apparait = () => {
-    setShow(!show);
-  };
 
   return (
     <nav className="mx-auto container px-4 h-24 flex items-center justify-center">
@@ -34,21 +29,7 @@ export default function Navbar() {
         </div>
 
         {/* Liens de navigations */}
-        <ul className="font-[family-name:var(--satoshi-)] lg:flex items-center gap-4 hidden">
-          <li className="flex items-center gap-2 group ">
-            <Link href="#">Shop</Link>
-            <ChevronDownIcon className="size-4 group-hover:rotate-180 ease-in-out transition-all duration-400" />
-          </li>
-          <li>
-            <Link href="#">En Vente</Link>
-          </li>
-          <li>
-            <Link href="#">Nouveautés</Link>
-          </li>
-          <li>
-            <Link href="#"> Brands</Link>
-          </li>
-        </ul>
+        <Navigation />
         {/* barre de recherche */}
         <div className="hidden md:block w-[50%] relative">
           <input

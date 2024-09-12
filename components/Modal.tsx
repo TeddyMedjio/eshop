@@ -5,15 +5,16 @@ import {
   Transition,
   TransitionChild,
 } from "@headlessui/react";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { Fragment, useState } from "react";
 
 export default function MyModal() {
   let [isOpen, setIsOpen] = useState(true);
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
   return (
     <>
@@ -46,19 +47,24 @@ export default function MyModal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <DialogPanel className="w-full bg-white max-w-lg transform overflow-hidden shadow-xl transition-all p-10 text-center flex flex-col items-center justify-center gap-4">
+                <DialogPanel className="relative w-full bg-white max-w-lg transform overflow-hidden shadow-xl transition-all p-14 text-center flex flex-col items-center justify-center gap-4">
+                  <span
+                    onClick={closeModal}
+                    className="hidden md:block cursor-pointer absolute top-4 -translate-x-1/2 right-6 lg:right-5 bg-black"
+                  >
+                    <XMarkIcon className="size-6 text-white" />
+                  </span>
                   <p className="font-[family-name:var(--satoshi-)] text-2xl uppercase">
                     Ce site a été developpé par:
                   </p>
-                  <span className="bg-black text-white px-10 py-4">
-                    <Link
-                      href="https://www.medjio.me"
-                      target="_blank"
-                      className="font-[family-name:var(--satoshibold-)]"
-                    >
-                      www.medjio.me
-                    </Link>
-                  </span>
+                  <Link
+                    href="https://www.medjio.me"
+                    target="_blank"
+                    className="font-[family-name:var(--satoshibold-)] bg-black text-white px-10 py-4"
+                  >
+                    www.medjio.me
+                  </Link>
+
                   <p className="font-[family-name:var(--satoshi-)] text-black/60">
                     Veillez me contacter pour vos besoins en Graphic Design,
                     Webdesign et FrontEnd Dev.😉
