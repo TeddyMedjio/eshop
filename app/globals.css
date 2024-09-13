@@ -61,3 +61,23 @@ body {
   display: grid;
   place-items: center;
 }
+
+.button {
+  align-content: center;
+  align-items: center;
+  background-color: var(--token-4fd39468-7501-4d57-902f-6dc7c98a80a1, #f7f7f7);
+  border-radius: 90px;
+  cursor: pointer;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 6px;
+  height: auto;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px 30px;
+  position: relative;
+  width: 180px;
+  will-change: var(--framer-will-change-override, transform);
+}

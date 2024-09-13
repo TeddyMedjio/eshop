@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Navinfo from "@/components/Navinfo";
 import NewArrivals from "@/components/NewArrivals";
 import SliderLogos from "@/components/SliderLogos";
+import TopSelling from "@/components/TopSelling";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <SliderLogos />
       <NewArrivals />
+      <TopSelling />
     </>
   );
 }
