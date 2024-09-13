@@ -19,9 +19,11 @@ export default function Hero() {
           </p>
 
           {/* button */}
-          <Button variant="default" size="default">
-            <Link href="/">Découvrir Plus</Link>
-          </Button>
+          <Link href="/">
+            <Button variant="default" size="default">
+              Découvrir Plus
+            </Button>
+          </Link>
           {/* statistiques */}
           <Stats />
         </div>

@@ -162,9 +162,11 @@ export default function NewArrivals() {
           </div>
         </div>
 
-        <Button variant="outline" size="default">
-          <Link href="/nouveautes">Plus de Nouveautés</Link>
-        </Button>
+        <Link href="/nouveautes">
+          <Button variant="outline" size="default">
+            Plus de Nouveautés
+          </Button>
+        </Link>
       </div>
     </div>
   );
