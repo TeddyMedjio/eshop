@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${satoshi.variable} ${satoshibold.variable} ${integralcf.variable} antialiased`}
+        className={`${satoshi.variable} ${satoshibold.variable} ${integralcf.variable} antialiased scroll-smooth`}
       >
         {children}
       </body>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Stats from "./Stats";
+import { Button } from "./Button";
 
 export default function Hero() {
   return (
@@ -18,9 +19,9 @@ export default function Hero() {
           </p>
 
           {/* button */}
-          <button className=" w-full md:w-fit font-[family-name:var(--satoshi-)] px-14 py-4 bg-black text-white duration-300  hover:scale-95 rounded-xl">
+          <Button variant="default" size="default">
             <Link href="/">Découvrir Plus</Link>
-          </button>
+          </Button>
           {/* statistiques */}
           <Stats />
         </div>

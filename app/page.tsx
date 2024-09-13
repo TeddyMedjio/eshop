@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import MyModal from "@/components/Modal";
 import Navbar from "@/components/Navbar";
 import Navinfo from "@/components/Navinfo";
+import NewArrivals from "@/components/NewArrivals";
 import SliderLogos from "@/components/SliderLogos";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SliderLogos />
+      <NewArrivals />
     </>
   );
 }
