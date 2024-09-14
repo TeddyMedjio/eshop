@@ -7,15 +7,15 @@ export default function TopSelling() {
   return (
     <div className="mx-auto container px-4 md:px-0 my-20 ">
       <div className="flex flex-col items-center justify-center">
-        <h2 className=" text-4xl md:text-5xl font-[family-name:var(--integralcf-)]">
+        <h2 className=" text-center md:text-left text-4xl md:text-5xl font-[family-name:var(--integralcf-)]">
           Meilleures Ventes
         </h2>
-        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-5 w-full my-12">
+        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
           {/* product */}
           <div>
             <Link href="#" className=" space-y-2">
               <div className="relative group w-[295px] h-[298px] rounded-lg overflow-hidden">
-                <span className="absolute h-full w-full transition-all duration-300 group-hover:bg-black/50 z-20 rounded-lg">
+                <span className="lg:absolute h-full w-full transition-all duration-300 group-hover:bg-black/50 z-20 rounded-lg">
                   <PlusIcon className="size-14 text-white transition-all duration-300 opacity-0 group-hover:opacity-100 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30" />
                 </span>
                 <Image
@@ -165,7 +165,6 @@ export default function TopSelling() {
             Voir plus
           </Button>
         </Link>
-        <button className="button">Voir plus</button>
       </div>
     </div>
   );
