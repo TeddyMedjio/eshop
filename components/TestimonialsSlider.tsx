@@ -80,8 +80,8 @@ export function TestimonialsSlider() {
 
   return (
     <Carousel plugins={[plugin.current]} className="w-full">
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="invisible lg:visible" />
+      <CarouselNext className="invisible lg:visible " />
       <CarouselContent className="-ml-1">
         {users.map((user) => (
           <CarouselItem
