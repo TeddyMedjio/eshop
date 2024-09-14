@@ -101,7 +101,7 @@ export function TestimonialsSlider() {
                     </div>
                   </div>
                   <p className=" text-sm md:text-base text-black/50 font-[family-name:var(--satoshi-)]">
-                    "{user.testimonial}”
+                    &quot; {user.testimonial} &quot;
                   </p>
                 </CardContent>
               </Card>
