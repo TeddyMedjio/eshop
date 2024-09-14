@@ -1,4 +1,5 @@
 import Category from "@/components/Category";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import MyModal from "@/components/Modal";
 import Navbar from "@/components/Navbar";
@@ -20,6 +21,7 @@ export default function Home() {
       <TopSelling />
       <Category />
       <Testimonials />
+      <Footer />
     </>
   );
 }
