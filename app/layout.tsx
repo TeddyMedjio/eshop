@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Navinfo from "@/components/Navinfo";
 
 const satoshi = localFont({
   src: "./fonts/SatoshiRegular.woff",
@@ -33,7 +36,10 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} ${satoshibold.variable} ${integralcf.variable} antialiased scroll-smooth`}
       >
+        <Navinfo />
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -10,7 +10,7 @@ import { Navigation } from "./MenuList";
 
 export default function Navbar() {
   return (
-    <nav className="mx-auto container px-4 h-24 flex items-center justify-center">
+    <nav className="mx-auto container px-4 h-24 flex items-center justify-center border-b">
       <div className="w-full flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
