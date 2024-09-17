@@ -29,7 +29,7 @@ const ressources = [
 
 export default function Footer() {
   return (
-    <div className="bg-[#F0F0F0] flex flex-col items-center justify-center pt-52 md:pt-56 lg:pt-32 relative">
+    <div className="bg-gris flex flex-col items-center justify-center pt-52 md:pt-56 lg:pt-32 relative">
       <Newsletter />
       <div className="mx-auto container px-4 flex flex-col items-center justify-center">
         <div className="grid grid-cols-2 md:grid-cols-5 space-y-10 md:space-y-0 md:space-x-10 mt-20 w-full border-b pb-10">

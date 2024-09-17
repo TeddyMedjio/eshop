@@ -16,10 +16,10 @@ export default function Newsletter() {
               name="email"
               placeholder="Votre email"
               size={40}
-              className=" w-full py-3 pl-12 rounded-full outline-none"
+              className=" w-full py-3 pl-12 rounded-full outline-none placeholder-black/50"
             />
           </div>
-          <button className="py-3 bg-white w-full rounded-full duration-300 hover:bg-[#adadad]">
+          <button className="py-3 bg-white w-full rounded-full duration-300 hover:bg-gris">
             Souscrire
           </button>
         </div>

@@ -33,9 +33,9 @@ export default function Navbar() {
             type="search"
             name="search"
             placeholder="Recherche de products..."
-            className=" bg-[#0000000c] pl-10 py-2 rounded-full w-full placeholder-[#00000065] outline-none"
+            className=" bg-gris pl-10 py-2 rounded-full w-full placeholder-black/50 outline-none"
           />
-          <MagnifyingGlassIcon className="size-6 text-[#00000065] absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 left-5" />
+          <MagnifyingGlassIcon className="size-6 text-black/50 absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 left-5" />
         </div>
         {/* panier et profil */}
         <div className="flex items-center gap-2">

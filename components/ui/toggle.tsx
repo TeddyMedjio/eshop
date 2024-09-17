@@ -7,15 +7,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const toggleVariants = cva(
-  "inline-flex items-center justify-center rounded-full font-[family-name:var(--satoshi-)] text-base text-black/60 font-medium transition-colors  focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-black data-[state=on]:text-white",
+  "inline-flex items-center justify-center rounded-full font-[family-name:var(--satoshi-)] text-sm md:text-base text-black/60 font-medium transition-colors  focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-black data-[state=on]:text-white",
   {
     variants: {
       variant: {
-        default: "bg-[#F0F0F0]",
+        default: "bg-gris",
         outline: "border border-input bg-black ",
       },
       size: {
-        default: "h-9 px-8",
+        default: "h-10 px-8",
         sm: "h-8 px-2",
         lg: "h-10 px-3",
       },

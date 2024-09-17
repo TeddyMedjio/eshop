@@ -28,7 +28,7 @@ const dress = [
 export default function Category() {
   return (
     <div className="md:mx-auto md:container px-4 my-20 ">
-      <div className="flex flex-col items-center justify-center bg-[#F0F0F0] rounded-3xl py-10 lg:py-20 px-8 lg:px-20">
+      <div className="flex flex-col items-center justify-center bg-gris rounded-3xl py-10 lg:py-20 px-8 lg:px-20">
         <h2 className="text-center lg:text-left text-4xl md:text-5xl font-[family-name:var(--integralcf-)]">
           Nos styles
         </h2>

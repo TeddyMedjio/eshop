@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,21 +12,15 @@ export function BreadcrumbCustom() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink>
-            <Link href="/">Acceuil</Link>
-          </BreadcrumbLink>
+          <BreadcrumbLink href="/">Acceuil</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink>
-            <Link href="/shop">Shop</Link>
-          </BreadcrumbLink>
+          <BreadcrumbLink href="/shop">Shop</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink>
-            <Link href="/hommes">Hommes</Link>
-          </BreadcrumbLink>
+          <BreadcrumbLink href="/hommes">Hommes</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

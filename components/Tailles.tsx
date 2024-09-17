@@ -5,5 +5,5 @@ interface TextProps {
 }
 
 export function Tailles({ text }: TextProps) {
-  return <Toggle aria-label="Toggle italic">{text}</Toggle>;
+  return <Toggle>{text}</Toggle>;
 }
