@@ -21,9 +21,9 @@ export function Reviews() {
               <p className="font-[family-name:var(--satoshi-)] text-black/70">
                 Nous travaillons avec des programmes de suivi pour garantir le
                 respect de nos standards sociaux, environnementaux ainsi que de
-                sécurité et d'hygiène de nos produits. Pour évaluer sa
-                conformité, nous avons développé un programme d'audits et de
-                plans d’amélioration continue.{" "}
+                sécurité et d&apos;hygiène de nos produits. Pour évaluer sa
+                conformité, nous avons développé un programme d&apos;audits et
+                de plans d’amélioration continue.{" "}
                 <span className="font-[family-name:var(--satoshibold-)]">
                   EXTÉRIEUR 100% coton.
                 </span>
@@ -34,12 +34,13 @@ export function Reviews() {
                 ENTRETIEN
               </h3>
               <p className="font-[family-name:var(--satoshi-)] text-black/70">
-                Prendre soin de vos vêtements, c'est prendre soin de
-                l'environnement. Les lavages à basse température et les
-                programmes d'essorage doux sont plus délicats avec les
+                Prendre soin de vos vêtements, c&apos;est prendre soin de
+                l&apos;environnement. Les lavages à basse température et les
+                programmes d&apos;essorage doux sont plus délicats avec les
                 vêtements, ils aident à conserver la couleur, la forme et la
                 structure du tissu. Ils réduisent en même temps la consommation
-                d'énergie qui est utilisée dans les processus d'entretien.
+                d&apos;énergie qui est utilisée dans les processus
+                d&apos;entretien.
               </p>
             </div>
             <div className="border p-4 rounded-lg bg-black/5">
@@ -52,8 +53,8 @@ export function Reviews() {
                 fabrication de nos produits. Ceci est capital pour garantir le
                 respect de nos normes sociales et environnementales. Les
                 processus de fabrication suivants de ce produit ont été
-                développés en: Tissage Turquie Teinture et I'mpression Turquie
-                Confection Turquie.
+                développés en: Tissage Turquie Teinture et I&apos;mpression
+                Turquie Confection Turquie.
               </p>
             </div>
             <div className="border p-4 rounded-lg bg-black/5">
@@ -91,9 +92,9 @@ export function Reviews() {
               <p className="font-[family-name:var(--satoshi-)] text-black/70">
                 Nous travaillons avec des programmes de suivi pour garantir le
                 respect de nos standards sociaux, environnementaux ainsi que de
-                sécurité et d'hygiène de nos produits. Pour évaluer sa
-                conformité, nous avons développé un programme d'audits et de
-                plans d’amélioration continue.{" "}
+                sécurité et d&apos;hygiène de nos produits. Pour évaluer sa
+                conformité, nous avons développé un programme d&apos;audits et
+                de plans d’amélioration continue.{" "}
                 <span className="font-[family-name:var(--satoshibold-)]">
                   EXTÉRIEUR 100% coton.
                 </span>
@@ -104,12 +105,13 @@ export function Reviews() {
                 ENTRETIEN
               </h3>
               <p className="font-[family-name:var(--satoshi-)] text-black/70">
-                Prendre soin de vos vêtements, c'est prendre soin de
-                l'environnement. Les lavages à basse température et les
-                programmes d'essorage doux sont plus délicats avec les
+                Prendre soin de vos vêtements, c&apos;est prendre soin de
+                l&apos;environnement. Les lavages à basse température et les
+                programmes d&apos;essorage doux sont plus délicats avec les
                 vêtements, ils aident à conserver la couleur, la forme et la
                 structure du tissu. Ils réduisent en même temps la consommation
-                d'énergie qui est utilisée dans les processus d'entretien.
+                d&apos;énergie qui est utilisée dans les processus
+                d&apos;entretien.
               </p>
             </div>
             <div className="border p-4 rounded-lg bg-black/5">
@@ -122,8 +124,8 @@ export function Reviews() {
                 fabrication de nos produits. Ceci est capital pour garantir le
                 respect de nos normes sociales et environnementales. Les
                 processus de fabrication suivants de ce produit ont été
-                développés en: Tissage Turquie Teinture et I'mpression Turquie
-                Confection Turquie.
+                développés en: Tissage Turquie Teinture et I&apos;mpression
+                Turquie Confection Turquie.
               </p>
             </div>
             <div className="border p-4 rounded-lg bg-black/5">

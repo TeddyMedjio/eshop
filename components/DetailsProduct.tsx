@@ -72,8 +72,8 @@ export default function DetailsProduct() {
 
           <p className="text-black/60 font-[family-name:var(--satoshi-)]">
             Ce t-shirt graphique parfait pour toutes les occasions. Fabriqué à
-            partir d'un tissu doux et respirant, il offre un confort et un style
-            supérieurs.
+            partir d&apos;un tissu doux et respirant, il offre un confort et un
+            style supérieurs.
           </p>
         </div>
 
