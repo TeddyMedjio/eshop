@@ -40,12 +40,12 @@ export default function Navbar() {
         {/* panier et profil */}
         <div className="flex items-center gap-2">
           <ResearchMobile />
-          <span className="relative">
+          <Link href="/cart" className="relative">
+            <p className="absolute -top-3 -left-1 bg-black rounded-full px-2 text-white text-sm">
+              3
+            </p>
             <ShoppingCartIcon className=" size-7 md:size-6 text-black" />
-            {/* <p className="absolute -top-3 -left-1 bg-black rounded-full px-2 text-white text-sm">
-              0
-            </p> */}
-          </span>
+          </Link>
           <span>
             <UserCircleIcon className=" size-7 md:size-6 text-black" />
           </span>

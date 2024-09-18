@@ -5,7 +5,7 @@ import { Reviews } from "@/components/Reviews";
 
 export default function page() {
   return (
-    <div className="mx-auto container px-4 pb-20 ">
+    <div className="mx-auto container px-4 pb-20  ">
       <BreadcrumbCustom />
       <DetailsProduct />
       <Reviews />

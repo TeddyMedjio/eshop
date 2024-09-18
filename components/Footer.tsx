@@ -12,7 +12,7 @@ const help = [
   { id: 1, href: "#", text: "Service Client" },
   { id: 2, href: "#", text: "Details de Livraison" },
   { id: 3, href: "#", text: "Termes et Conditions" },
-  { id: 4, href: "#", text: "politique de confidentialité" },
+  { id: 4, href: "#", text: "Politique de confidentialité" },
 ];
 const faq = [
   { id: 1, href: "#", text: "Compte" },
