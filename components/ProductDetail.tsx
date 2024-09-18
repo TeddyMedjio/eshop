@@ -22,19 +22,19 @@ export default function ProductDetail({
   return (
     <div className="space-y-2">
       <Link href="#" className=" space-y-2">
-        <div className="relative group w-[295px] h-[298px] rounded-lg overflow-hidden">
-          <span className="absolute h-full w-full transition-all duration-300 group-hover:bg-black/50 z-20 rounded-lg">
-            <PlusIcon className="size-14 text-white transition-all duration-300 opacity-0 group-hover:opacity-100 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30" />
+        <div className="relative w-[295px] h-[298px] rounded-lg overflow-hidden">
+          <span className="absolute left-1/2 bottom-4 transform -translate-x-1/2 -translate-y-1/2   transition-all duration-300 z-30 rounded-lg">
+            <PlusIcon className="size-4 text-black transition-all duration-300 absolute left-1/2 top-/1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/50 rounded-full  " />
           </span>
 
           <Image
             src={url}
             alt="image"
             fill={true}
-            className="absolute object-cover object-center"
+            className="absolute object-contain object-center"
           />
         </div>
-        <p className="text-black font-[family-name:var(--satoshibold-)]">
+        <p className="text-black font-[family-name:var(--satoshibold-)] text-xl">
           {title}
         </p>
         <div className="flex items-center gap-4">

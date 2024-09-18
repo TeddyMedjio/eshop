@@ -1,13 +1,11 @@
-import { Button } from "./Button";
-import Link from "next/link";
 import ProductDetail from "./ProductDetail";
 
-export default function TopSelling() {
+export default function AlsoLike() {
   return (
     <div className="mx-auto container px-4 md:px-0 my-20 ">
       <div className="flex flex-col items-center justify-center">
-        <h2 className=" text-center md:text-left text-[40px] md:text-5xl font-[family-name:var(--integralcf-)] leading-10 md:leading-none">
-          Meilleures Ventes
+        <h2 className=" text-center md:text-left text-4xl md:text-5xl font-[family-name:var(--integralcf-)]">
+          Vous aimerez aussi
         </h2>
         <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
           {/* product */}
@@ -42,12 +40,6 @@ export default function TopSelling() {
             isActif={false}
           />
         </div>
-
-        <Link href="/meilleures-ventes">
-          <Button variant="outline" size="default">
-            Voir plus
-          </Button>
-        </Link>
       </div>
     </div>
   );

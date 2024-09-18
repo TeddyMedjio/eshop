@@ -6,7 +6,7 @@ export default function NewArrivals() {
   return (
     <div className="mx-auto container px-4 md:px-0 my-20 ">
       <div className="flex flex-col items-center justify-center border-b pb-16">
-        <h2 className=" text-4xl md:text-5xl font-[family-name:var(--integralcf-)]">
+        <h2 className=" text-[40px] md:text-5xl font-[family-name:var(--integralcf-)]">
           Nouveautes
         </h2>
         <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">

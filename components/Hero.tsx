@@ -9,10 +9,10 @@ export default function Hero() {
       <div className="md:mx-auto md:container lg:pt-0 md:px-4 flex flex-col lg:flex-row items-center lg:justify-start h-full">
         <div className=" w-full lg:max-w-[577px] flex flex-col gap-8 py-12 lg:py-0 px-4 md:px-0">
           {/* title */}
-          <h1 className="font-[family-name:var(--integralcf-)] text-black text-[36px] leading-[34px] md:text-[64px] md:leading-[64px]">
+          <h1 className="font-[family-name:var(--integralcf-)] text-black text-[40px] leading-[40px] md:text-[64px] md:leading-[64px]">
             find clothes that matches your style
           </h1>
-          <p className="text-black/80 text-sm md:text-base font-[family-name:var(--satoshi-)]">
+          <p className="text-black/80 text-base md:text-base font-[family-name:var(--satoshi-)]">
             Parcourez notre gamme diversifiée de vêtements méticuleusement
             confectionnés, conçus pour faire ressortir votre individualité et
             répondre à votre sens du style.

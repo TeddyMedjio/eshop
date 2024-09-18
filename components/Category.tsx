@@ -29,7 +29,7 @@ export default function Category() {
   return (
     <div className="md:mx-auto md:container px-4 my-20 ">
       <div className="flex flex-col items-center justify-center bg-gris rounded-3xl py-10 lg:py-20 px-8 lg:px-20">
-        <h2 className="text-center lg:text-left text-4xl md:text-5xl font-[family-name:var(--integralcf-)]">
+        <h2 className="text-center lg:text-left text-[40px] md:text-5xl font-[family-name:var(--integralcf-)]">
           Nos styles
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 w-full mt-12">
