@@ -2,7 +2,6 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 import { AdjustmentsVerticalIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { ComboBox } from "./Combobox";
-import Link from "next/link";
 
 const users = [
   {
