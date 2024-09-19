@@ -1,10 +1,5 @@
 import { TestimonialsSlider } from "./TestimonialsSlider";
 
-async function getReview() {
-  const res = await fetch("http://localhost:4001/review");
-  return res.json();
-}
-
 export default async function Testimonials() {
   return (
     <div className="mx-auto container px-4 mt-20 mb-52 ">
