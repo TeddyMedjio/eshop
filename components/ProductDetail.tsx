@@ -17,7 +17,6 @@ export default function ProductDetail({
   title,
   price,
   sold,
-  color,
   link,
 }: PropDetail) {
   return (
