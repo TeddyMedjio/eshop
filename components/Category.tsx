@@ -4,7 +4,9 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import { Collection } from "@/lib/models/ProductModels";
 
 async function getCollections() {
-  const res = await fetch("http://localhost:4000/collections");
+  const res = await fetch(
+    "https://ecommerce-data-tyi1.onrender.com/collections"
+  );
   return res.json();
 }
 

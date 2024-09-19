@@ -6,7 +6,7 @@ import { Reviews } from "@/components/Reviews";
 import { Product } from "@/lib/models/ProductModels";
 
 async function getProducts() {
-  const res = await fetch("http://localhost:4000/products");
+  const res = await fetch("https://ecommerce-data-tyi1.onrender.com/products");
   return res.json();
 }
 export default async function ProductDetails({

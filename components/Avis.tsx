@@ -5,7 +5,7 @@ import { ComboBox } from "./Combobox";
 import { Review } from "@/lib/models/ProductModels";
 
 async function getReviews() {
-  const res = await fetch("http://localhost:4002/review");
+  const res = await fetch("https://ecommerce-data-tyi1.onrender.com/review");
   return res.json();
 }
 
