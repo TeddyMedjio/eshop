@@ -6,7 +6,7 @@ import SliderLogos from "@/components/SliderLogos";
 import Testimonials from "@/components/Testimonials";
 import TopSelling from "@/components/TopSelling";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <MyModal />
