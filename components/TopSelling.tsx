@@ -1,8 +1,15 @@
 import { Button } from "./Button";
 import Link from "next/link";
 import ProductDetail from "./ProductDetail";
+import { Product } from "@/lib/models/ProductModels";
 
-export default function TopSelling() {
+async function getProducts() {
+  const res = await fetch("http://localhost:4000/products");
+  return res.json();
+}
+
+export default async function TopSelling() {
+  const products: Product[] = await getProducts();
   return (
     <div className="mx-auto container px-4 md:px-0 my-20 ">
       <div className="flex flex-col items-center justify-center">
@@ -10,37 +17,17 @@ export default function TopSelling() {
           Meilleures Ventes
         </h2>
         <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
-          {/* product */}
-          <ProductDetail
-            url="/images/vertical.png"
-            title="Vertical Striped Shirt"
-            reduction={`${-15}%`}
-            price={`$${212}`}
-            sold={`$${232}`}
-            isActif={true}
-          />
-          {/* product */}
-          <ProductDetail
-            url="/images/courage.png"
-            price={`$${145}`}
-            title="Courage Graphic T-shirt"
-            isActif={false}
-          />
-          {/* product */}
-          <ProductDetail
-            url="/images/loose.png"
-            price={`$${80}`}
-            title="Loose Fit Bermuda Shorts"
-            isActif={false}
-          />
-
-          {/* product */}
-          <ProductDetail
-            url="/images/faded.png"
-            price={`$${210}`}
-            title="Faded Skinny Jeans"
-            isActif={false}
-          />
+          {/* product un */}
+          {products.slice(4, 8).map((product) => (
+            <ProductDetail
+              key={product.slug}
+              link={product.slug}
+              url={product.image_url}
+              price={`$${product.price}`}
+              title={product.name}
+              sold={`$${product.sold}`}
+            />
+          ))}
         </div>
 
         <Link href="/meilleures-ventes">

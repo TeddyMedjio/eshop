@@ -1,69 +1,54 @@
 import { Tailles } from "./Tailles";
 import Image from "next/image";
 
-const images = [
-  { id: "1", url: "/images/slide1.png" },
-  { id: "2", url: "/images/slide2.png" },
-  { id: "3", url: "/images/slide3.png" },
-];
+interface DetailProps {
+  image: string;
+  name: string;
+  price: number;
+  sold?: string;
+  description: string;
+  color?: string;
+}
 
-const colors = [
-  { id: "1", url: "#4F4631" },
-  { id: "2", url: "#314F4A" },
-  { id: "3", url: "#31344F" },
-];
-
-export default function DetailsProduct() {
+export default function DetailsProduct({
+  image,
+  name,
+  price,
+  sold,
+  description,
+  color,
+}: DetailProps) {
   return (
-    <div className=" flex flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-start gap-8 mt-5 mb-20 ">
+    <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 mb-20 ">
       {/* images */}
-      <div className="w-full lg:w-auto flex flex-col-reverse md:flex-row items-end justify-center gap-3 md:gap-4 md:h-[530px]">
-        <div className="flex flex-row gap-3 md:gap-0 md:flex-col justify-between h-full">
-          {images.map((image) => (
-            <div
-              key={image.id}
-              className="relative h-[106px] w-[111px]  md:h-[167px] md:w-[152px] "
-            >
-              <Image
-                src={image.url}
-                fill={true}
-                alt="image"
-                className="rounded-[10px] object-cover object-center "
-              />
-            </div>
-          ))}
-        </div>
-        <div>
-          <Image
-            src="/images/slide1.png"
-            width={444}
-            height={530}
-            alt="image"
-            className="rounded-[20px]"
-          />
-        </div>
+      <div className=" col-span-1 relative rounded-[20px] overflow-hidden width={344px} h-[530px] ">
+        <Image
+          src={image}
+          fill={true}
+          alt="image"
+          draggable={false}
+          className="absolute object-cover object-center"
+        />
       </div>
 
       {/* infos produit */}
-      <div className="flex-1 ">
-        <h2 className="font-[family-name:var(--integralcf-)] text-4xl md:text-[40px]">
-          one life graphic tshirt
+      <div className="col-span-1 ">
+        <h2 className="font-[family-name:var(--integralcf-)] text-4xl lg:text-[40px]">
+          {name}
         </h2>
         {/* NOTASION */}
         <div className="flex items-center gap-4 mt-3">
           <Image src="/images/starts.svg" alt="image" width={104} height={18} />
-          <p className="text-black font-[family-name:var(--satoshi-)] ">
-            4.5/5
-          </p>
+          <p className="text-black font-[family-name:var(--satoshi-)] ">5/5</p>
         </div>
         {/* PRIX et DESCRIPTION */}
         <div className="border-b flex flex-col py-[20px] gap-4">
           <div className="flex items-center gap-2">
             <p className="text-black font-[family-name:var(--satoshibold-)] text-3xl">
-              $240
+              {`$${price}`}
             </p>
             <p className="text-black/30  font-[family-name:var(--satoshibold-)] text-3xl line-through">
-              $260
+              {`$${sold}`}
             </p>
             <p className="font-[family-name:var(--satoshi-)] text-sm bg-red-50 border border-red-100 py-1 px-2 rounded-full text-red-500">
               -40%
@@ -71,25 +56,21 @@ export default function DetailsProduct() {
           </div>
 
           <p className="text-black/60 font-[family-name:var(--satoshi-)]">
-            Ce t-shirt graphique parfait pour toutes les occasions. Fabriqué à
-            partir d&apos;un tissu doux et respirant, il offre un confort et un
-            style supérieurs.
+            {description}
           </p>
         </div>
 
         {/* COLORS */}
         <div className="border-b py-[20px] space-y-4">
           <p className="text-black/60 font-[family-name:var(--satoshi-)]">
-            Choix de couleurs
+            Couleurs Disponibles
           </p>
 
           <div className="w-fit flex items-center gap-3">
-            {colors.map((item) => (
-              <div
-                key={item.id}
-                className={`h-9 w-9 bg-[${item.url}] rounded-full cursor-pointer`}
-              ></div>
-            ))}
+            <div
+              style={{ backgroundColor: `${color}` }}
+              className={` h-7 w-7 rounded-full border border-gray-400`}
+            ></div>
           </div>
         </div>
 
@@ -102,17 +83,16 @@ export default function DetailsProduct() {
             <Tailles text="Small" />
             <Tailles text="Medium" />
             <Tailles text="Large" />
-            <Tailles text="X-Large" />
           </div>
         </div>
         {/* Button add cart */}
         <div className="w-full flex items-center gap-3 pt-6">
-          <div className="max-w-[200px] flex-1 flex items-center justify-around bg-gris font-[family-name:var(--satoshibold-)] text-white w-full py-4 rounded-full">
+          <div className="max-w-[200px] flex-1 flex items-center justify-around bg-gris font-[family-name:var(--satoshibold-)] text-white w-full py-3 rounded-full">
             <p className="text-black font-[family-name:var(--satoshi-)]">-</p>
             <p className="text-black font-[family-name:var(--satoshi-)]">1</p>
             <p className="text-black font-[family-name:var(--satoshi-)]">+</p>
           </div>
-          <button className="bg-black font-[family-name:var(--satoshi-)] text-white flex-auto py-4 rounded-full">
+          <button className="bg-black font-[family-name:var(--satoshi-)] text-white flex-auto py-3 rounded-full">
             Ajouter au Panier
           </button>
         </div>

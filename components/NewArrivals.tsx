@@ -1,8 +1,16 @@
 import { Button } from "./Button";
 import Link from "next/link";
 import ProductDetail from "./ProductDetail";
+import { Product } from "@/lib/models/ProductModels";
 
-export default function NewArrivals() {
+async function getProducts() {
+  const res = await fetch("http://localhost:4000/products");
+  return res.json();
+}
+
+export default async function NewArrivals() {
+  const products: Product[] = await getProducts();
+
   return (
     <div className="mx-auto container px-4 md:px-0 my-20 ">
       <div className="flex flex-col items-center justify-center border-b pb-16">
@@ -11,37 +19,17 @@ export default function NewArrivals() {
         </h2>
         <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
           {/* product un */}
-          <ProductDetail
-            url="/images/tshirt.png"
-            price={`$${240}`}
-            title="T-shirt with Taps Details"
-            isActif={false}
-          />
-          {/* product deux */}
-          <ProductDetail
-            url="/images/jeans.png"
-            price={`$${240}`}
-            title="Skinny Fit Jeans"
-            sold={`$ ${260}`}
-            reduction={`${-20}%`}
-            isActif={true}
-          />
-          {/* product trois */}
-          <ProductDetail
-            url="/images/shirt.png"
-            price={`$${350}`}
-            title="Checkered Shirt"
-            isActif={false}
-          />
-          {/* product quatre */}
-          <ProductDetail
-            url="/images/stripeed.png"
-            price={`$${130}`}
-            title="Skinny Fit Jeans"
-            sold={`$ ${160}`}
-            reduction={`${-30}%`}
-            isActif={true}
-          />
+          {products.slice(0, 4).map((product) => (
+            <div key={product.slug}>
+              <ProductDetail
+                link={product.slug}
+                url={product.image_url}
+                price={`$${product.price}`}
+                title={product.name}
+                sold={`$${product.sold}`}
+              />
+            </div>
+          ))}
         </div>
 
         <Link href="/nouveautes">

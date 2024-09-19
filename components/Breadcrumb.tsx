@@ -7,7 +7,13 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-export function BreadcrumbCustom() {
+interface PropsText {
+  product: string;
+  collection: string;
+  link: string;
+}
+
+export function BreadcrumbCustom({ product, collection, link }: PropsText) {
   return (
     <Breadcrumb>
       <BreadcrumbList>
@@ -16,15 +22,13 @@ export function BreadcrumbCustom() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/shop">Shop</BreadcrumbLink>
+          <BreadcrumbLink href={`/${link}`} className=" capitalize">
+            {collection}
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/hommes">Hommes</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>T-shirts</BreadcrumbPage>
+          <BreadcrumbPage className=" capitalize">{product}</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
