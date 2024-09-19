@@ -15,21 +15,18 @@ export default function AlsoLike() {
             reduction={`${-15}%`}
             price={`$${212}`}
             sold={`$${232}`}
-            isActif={true}
           />
           {/* product */}
           <ProductDetail
             url="/images/courage.png"
             price={`$${145}`}
             title="Courage Graphic T-shirt"
-            isActif={false}
           />
           {/* product */}
           <ProductDetail
             url="/images/loose.png"
             price={`$${80}`}
             title="Loose Fit Bermuda Shorts"
-            isActif={false}
           />
 
           {/* product */}
@@ -37,7 +34,6 @@ export default function AlsoLike() {
             url="/images/faded.png"
             price={`$${210}`}
             title="Faded Skinny Jeans"
-            isActif={false}
           />
         </div>
       </div>

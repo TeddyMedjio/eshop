@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface PropDetail {
   url: string;
-  link: string;
+  link?: string;
   title: string;
   price: string;
   sold?: string | "";
