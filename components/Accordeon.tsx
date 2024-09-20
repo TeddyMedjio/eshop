@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ReactHTML, ReactHTMLElement, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface acordeonProps {
   title: string;

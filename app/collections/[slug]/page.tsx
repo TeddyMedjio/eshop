@@ -30,7 +30,7 @@ export default async function ProductCollection({
     return <ProductNotFound />;
   }
 
-  let product = products.filter((product) =>
+  const product = products.filter((product) =>
     collection.slug.includes(product.collection)
   );
 
@@ -99,7 +99,7 @@ export default async function ProductCollection({
               <div className="flex items-center flex-wrap gap-4">
                 <div className="h-9 w-9 bg-green-500 border border-green-800 rounded-full"></div>
                 <div className="h-9 w-9 bg-red-500 border border-red-800 rounded-full"></div>
-                <div className="h-9 w-9 bg-yellow-500 border border-yellow-800 rounded-full"></div>
+                <div className="h-9 w-9 bg-yellow-400 border border-yellow-800 rounded-full"></div>
                 <div className="h-9 w-9 bg-orange-500 border border-orange-800 rounded-full"></div>
                 <div className="h-9 w-9 bg-blue-500 border border-blue-800 rounded-full"></div>
                 <div className="h-9 w-9 bg-purple-500 border border-purple-800 rounded-full"></div>
