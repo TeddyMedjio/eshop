@@ -16,7 +16,7 @@ export default async function Category() {
     <div className="md:mx-auto md:container px-4 my-20 ">
       <div className="flex flex-col items-center justify-center bg-gris rounded-3xl py-10 lg:py-20 px-8 lg:px-20">
         <h2 className="text-center lg:text-left text-[40px] md:text-5xl font-[family-name:var(--integralcf-)]">
-          Nos styles
+          Nos Collections
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 w-full mt-12">
           {collections.map((collection) => (
@@ -24,7 +24,7 @@ export default async function Category() {
               key={collection.slug}
               className={`bg-white md:first-of-type:col-span-1 md:last-of-type:col-span-1 md:odd:col-span-2 md:even:col-span-2 h-[190px] lg:h-[289px] rounded-lg overflow-hidden relative`}
             >
-              <Link href={`/${collection.slug}`} className="group">
+              <Link href={`/collections/${collection.slug}`} className="group">
                 <span className="lg:absolute bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 w-full h-full z-30">
                   <PlusIcon className="size-14 text-white transition-all duration-300 opacity-0 group-hover:opacity-100 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30" />
                 </span>

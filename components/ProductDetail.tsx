@@ -22,7 +22,7 @@ export default function ProductDetail({
   return (
     <div className="space-y-2">
       <Link href={`/${link}`} className="bg-red-400 z-40">
-        <div className="relative w-[295px] h-[298px] rounded-lg overflow-hidden">
+        <div className="relative w-[360px] md:w-[295px] h-[298px] rounded-lg overflow-hidden">
           <PlusIcon className="size-4 text-black transition-all duration-300 absolute left-1/2 top-/1/2 bottom-4 transform -translate-x-1/2 -translate-y-1/2 bg-white/50 rounded-full z-50" />
           <Image
             src={url}

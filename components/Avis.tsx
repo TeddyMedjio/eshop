@@ -36,7 +36,7 @@ export default async function Avis() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {reviews.slice(0, 8).map((review) => (
           <div
-            key={review.product_id}
+            key={review.author}
             className="pl-1 col-span-1 border rounded-xl"
           >
             <div className="p-1">
