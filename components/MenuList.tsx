@@ -42,24 +42,18 @@ export function Navigation() {
                         type="video/webm"
                       />
                     </video>
-                    {/* <Image
-                      src="/images/background.png"
-                      fill={true}
-                      alt="image"
-                      className="absolute object-cover object-center"
-                    /> */}
                   </span>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/categories/hommes" title="Hommes">
+              <ListItem href="/collections/casual" title="Casual">
                 Des classiques intemporels qui représentent le style
                 emblematique.
               </ListItem>
-              <ListItem href="/categories/femmes" title="Femmes">
+              <ListItem href="/collections/formal" title="Formal">
                 Dites vos propres règles et concrétisez vos ambitions avec un
                 style unique.
               </ListItem>
-              <ListItem href="/categories/enfants" title="Enfants">
+              <ListItem href="/collections/party" title="Party">
                 C&apos;est une nouvelle aventure! Assurer vous que votre enfant
                 dispose de tout ce qu&apos;il lui faut
               </ListItem>

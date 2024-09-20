@@ -28,7 +28,7 @@ export default function ProductDetail({
             src={url}
             alt="image"
             fill={true}
-            className="absolute object-cover object-center"
+            className="absolute object-cover object-center hover:scale-110 duration-300"
           />
         </div>
       </Link>

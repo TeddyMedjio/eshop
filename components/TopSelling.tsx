@@ -1,5 +1,3 @@
-import { Button } from "./Button";
-import Link from "next/link";
 import ProductDetail from "./ProductDetail";
 import { Product } from "@/lib/models/ProductModels";
 
@@ -30,11 +28,11 @@ export default async function TopSelling() {
           ))}
         </div>
 
-        <Link href="/meilleures-ventes">
+        {/* <Link href="/meilleures-ventes">
           <Button variant="outline" size="default">
             Voir plus
           </Button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

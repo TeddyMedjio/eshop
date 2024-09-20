@@ -1,5 +1,6 @@
 import { Accordeon } from "@/components/Accordeon";
 import { BreadcrumbCollection } from "@/components/BreadcrumCollection";
+import { FiltreMobile } from "@/components/FiltreMobile";
 import ProductDetail from "@/components/ProductDetail";
 import ProductNotFound from "@/components/ProductNotFound";
 import { Tailles } from "@/components/Tailles";
@@ -171,9 +172,7 @@ export default async function ProductCollection({
               <span className="font-[family-name:var(--satoshibold-)] text-black">
                 Plus Populaires
               </span>
-              <button className="lg:hidden grid items-center p-2 bg-gris rounded-full">
-                <AdjustmentsVerticalIcon className="size-6" />
-              </button>
+              <FiltreMobile />
             </div>
           </div>
 

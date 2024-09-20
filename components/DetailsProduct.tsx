@@ -16,8 +16,8 @@ export default function DetailsProduct({
   price,
   sold,
   description,
-  color,
-}: DetailProps) {
+}: // color,
+DetailProps) {
   return (
     <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 mb-20 ">
       {/* images */}
@@ -61,7 +61,7 @@ export default function DetailsProduct({
         </div>
 
         {/* COLORS */}
-        <div className="border-b py-[20px] space-y-4">
+        {/* <div className="border-b py-[20px] space-y-4">
           <p className="text-black/60 font-[family-name:var(--satoshi-)]">
             Couleurs Disponibles
           </p>
@@ -72,7 +72,7 @@ export default function DetailsProduct({
               className={` h-7 w-7 rounded-full border border-gray-400`}
             ></div>
           </div>
-        </div>
+        </div> */}
 
         {/* SIZE */}
         <div className="py-[20px] space-y-4 border-b">

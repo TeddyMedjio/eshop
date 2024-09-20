@@ -1,5 +1,11 @@
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import { Cross2Icon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,8 +17,8 @@ export function MobileMenu() {
           <Bars3Icon className="size-10 text-black] " />
         </Link>
       </SheetTrigger>
-      <SheetContent>
-        <div className="mt-10">
+      <SheetContent side="top">
+        <div className="mt-10 flex items-center justify-between">
           <Link href="/">
             <Image
               src="/images/logoeshopwhite.svg"
@@ -22,8 +28,11 @@ export function MobileMenu() {
               className="text-white"
             />
           </Link>
+          <SheetClose>
+            <Cross2Icon className="size-8 text-white" />
+          </SheetClose>
         </div>
-        <ul className="flex flex-col gap-2 mt-20">
+        <ul className="flex flex-col gap-2 my-20">
           <li>
             <Link
               href="#"
@@ -48,7 +57,7 @@ export function MobileMenu() {
               className="text-white text-3xl font-[family-name:var(--integralcf-)]
 "
             >
-              n. arrivals
+              N. arrivals
             </Link>
           </li>
           <li>
@@ -61,13 +70,6 @@ export function MobileMenu() {
             </Link>
           </li>
         </ul>
-        {/* <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
-          </SheetDescription>
-        </SheetHeader> */}
-        <div className="grid gap-4 py-4"></div>
       </SheetContent>
     </Sheet>
   );
