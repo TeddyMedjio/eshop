@@ -23,13 +23,13 @@ export default async function ProductCollection({
 }: {
   params: { slug: string };
 }) {
-  const products: Product[] = await getProducts();
   const collections: Collection[] = await getCollections();
   const collection = collections.find((x) => x.slug === params.slug);
   if (!collection) {
     return <ProductNotFound />;
   }
 
+  const products: Product[] = await getProducts();
   const product = products.filter((product) =>
     collection.slug.includes(product.collection)
   );
