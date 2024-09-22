@@ -27,6 +27,8 @@ export default async function NewArrivals() {
                 price={`$${product.price}`}
                 title={product.name}
                 sold={`$${product.sold}`}
+                color={product.color}
+                reduction=""
               />
             </div>
           ))}

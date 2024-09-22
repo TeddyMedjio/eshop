@@ -8,8 +8,8 @@ interface PropDetail {
   title: string;
   price: string;
   sold?: string | "";
-  reduction?: string | "";
-  color?: string;
+  reduction?: string;
+  color?: string | "";
 }
 
 export default function ProductDetail({
@@ -18,6 +18,8 @@ export default function ProductDetail({
   price,
   sold,
   link,
+  color,
+  reduction,
 }: PropDetail) {
   return (
     <div className="space-y-2">
@@ -40,10 +42,12 @@ export default function ProductDetail({
         <p className="text-black font-[family-name:var(--satoshi-)]">3.5/5</p>
       </div>
 
-      {/* <div
-        style={{ backgroundColor: `${color}` }}
-        className={` h-6 w-6 rounded-full border border-gray-400`}
-      ></div> */}
+      {(
+        <div
+          style={{ backgroundColor: `${color}` }}
+          className={` h-6 w-6 rounded-full border border-gray-400`}
+        ></div>
+      ) ?? ""}
 
       <div className="flex items-center gap-2">
         <p className="text-black font-[family-name:var(--satoshibold-)] text-2xl">
@@ -52,11 +56,13 @@ export default function ProductDetail({
         <p className="text-black/30  font-[family-name:var(--satoshibold-)] text-2xl line-through">
           {sold}
         </p>
-        {/* {isActif && (
+        {{ reduction } ? (
           <p className="font-[family-name:var(--satoshi-)] text-sm bg-red-50 border border-red-100 py-1 px-2 rounded-full text-red-500">
-            {`${reduction}`}
+            {reduction}
           </p>
-        )} */}
+        ) : (
+          <p></p>
+        )}
       </div>
     </div>
   );
