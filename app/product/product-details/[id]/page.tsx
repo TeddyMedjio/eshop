@@ -18,7 +18,6 @@ export default async function ProductDetails({
   const relatedProduct: Product[] = await getProductByCollections(
     singleProduct.collections
   );
-  console.log(relatedProduct);
 
   // permet de convertir les votes du nombre decimal au nombre entier
   const num = Math.round(singleProduct.rate);
@@ -55,7 +54,7 @@ export default async function ProductDetails({
             <div className="flex items-center">
               {starRating.map((star) => (
                 <StarFilledIcon
-                  key={Math.random() * 1000}
+                  key={star * 1000}
                   fill="yellow"
                   className="text-yellow-400 size-5"
                 />

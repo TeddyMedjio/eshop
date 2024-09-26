@@ -40,7 +40,7 @@ export default function ProductCard({ product }: Props) {
         <div className="flex items-center">
           {starRating.map((star) => (
             <StarFilledIcon
-              key={Math.random() * 1000}
+              key={star * 1000}
               fill="yellow"
               className="text-yellow-400 size-5"
             />
