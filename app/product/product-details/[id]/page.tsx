@@ -1,4 +1,3 @@
-import { Collection, Product } from "@/lib/models/ProductModels";
 import { getProductByCollections, getSingleProduct } from "@/api/requests";
 import React from "react";
 import { Tailles } from "@/components/Tailles";
@@ -6,9 +5,8 @@ import Image from "next/image";
 import { BreadcrumbCustom } from "@/components/Breadcrumb";
 import { StarFilledIcon } from "@radix-ui/react-icons";
 import { Reviews } from "@/components/Reviews";
-import AlsoLike from "@/components/AlsoLike";
 import AjouterAuPanier from "./AjouterAuPanier";
-import ProductCard from "@/components/ProductCard";
+import { Product } from "@/lib/models/ProductModels";
 
 export default async function ProductDetails({
   params,

@@ -6,7 +6,6 @@ import { Review } from "@/lib/models/ProductModels";
 import { getReviews } from "@/api/requests";
 import { useEffect, useState } from "react";
 import { Loader } from "lucide-react";
-import { StarFilledIcon } from "@radix-ui/react-icons";
 
 export default function Avis() {
   const [reviews, setReviews] = useState<Review[] | null>(null);
