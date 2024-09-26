@@ -3,11 +3,7 @@ import { AdjustmentsVerticalIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { ComboBox } from "./Combobox";
 import { Review } from "@/lib/models/ProductModels";
-
-async function getReviews() {
-  const res = await fetch("https://ecommerce-data-tyi1.onrender.com/review");
-  return res.json();
-}
+import { getReviews } from "@/api/requests";
 
 export default async function Avis() {
   const reviews: Review[] = await getReviews();

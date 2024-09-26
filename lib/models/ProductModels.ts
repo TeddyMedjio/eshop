@@ -1,12 +1,13 @@
 export type Product = {
+  id: number;
   name: string;
   slug: string;
   image_url: string;
   price: number;
-  sold?: string | "";
+  rate: number;
   description: string;
-  collection: string;
-  color?: string;
+  collections: string;
+  color?: [];
   features: [];
   fabric: [];
   shipping: [];

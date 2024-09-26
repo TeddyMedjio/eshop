@@ -1,7 +1,7 @@
+import { getCollections, getProducts } from "@/api/requests";
 import { Accordeon } from "@/components/Accordeon";
 import { BreadcrumbCollection } from "@/components/BreadcrumCollection";
 import { FiltreMobile } from "@/components/FiltreMobile";
-import ProductDetail from "@/components/ProductDetail";
 import ProductNotFound from "@/components/ProductNotFound";
 import { Tailles } from "@/components/Tailles";
 import { Progress } from "@/components/ui/progress";
@@ -9,16 +9,6 @@ import { Collection, Product } from "@/lib/models/ProductModels";
 import { AdjustmentsVerticalIcon } from "@heroicons/react/24/solid";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 
-async function getCollections() {
-  const res = await fetch(
-    "https://ecommerce-data-tyi1.onrender.com/collections"
-  );
-  return res.json();
-}
-async function getProducts() {
-  const res = await fetch("https://ecommerce-data-tyi1.onrender.com/products");
-  return res.json();
-}
 export default async function ProductCollection({
   params,
 }: {
@@ -32,13 +22,16 @@ export default async function ProductCollection({
 
   const products: Product[] = await getProducts();
   const product = products.filter((product) =>
-    collection.slug.includes(product.collection)
+    collection.slug.includes(product.collections)
   );
 
   return (
     <div className="mx-auto container px-4 pb-20 mt-5 mb-20">
       {product.slice(0, 1).map((product) => (
-        <BreadcrumbCollection key={product.slug} product={product.collection} />
+        <BreadcrumbCollection
+          key={product.slug}
+          product={product.collections}
+        />
       ))}
       <div className="flex items-start gap-5 mt-10">
         {/* barre de recherche */}
@@ -178,16 +171,9 @@ export default async function ProductCollection({
 
           {/* Collection de produits */}
           <div className="flex flex-col md:flex-row flex-wrap items-center gap-10 md:gap-5 mt-10">
-            {product.map((item) => (
-              <ProductDetail
-                key={item.slug}
-                link={item.slug}
-                url={item.image_url}
-                price={`$${item.price}`}
-                title={item.name}
-                sold={`$${item.sold}`}
-              />
-            ))}
+            {/* {product.map((item) => (
+              <ProductDetail product={product} />
+            ))} */}
           </div>
         </div>
       </div>

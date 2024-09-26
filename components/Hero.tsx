@@ -19,6 +19,7 @@ export default function Hero() {
           </p>
 
           {/* button */}
+
           <Link href="/">
             <Button variant="default" size="default">
               Découvrir Plus

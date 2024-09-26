@@ -1,7 +1,6 @@
 "use client";
 
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function Navinfo() {
@@ -14,14 +13,12 @@ export default function Navinfo() {
       {hidden && (
         <div className="bg-black h-[38px] w-full flex items-center justify-center">
           <div className="relative mx-auto container">
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-center gap-1">
               <p className="font-[family-name:var(--satoshi-)] text-white text-sm ">
-                Inscrivez-vous et bénéficiez de 20% de réduction.{" "}
+                Inscrivez-vous et bénéficiez de{" "}
               </p>
-              <span className="underline font-semibold animate-pulse hidden md:block">
-                <Link href="#" className="text-white text-sm">
-                  Inscrivez-vous Maintenant
-                </Link>
+              <span className="underline font-medium animate-pulse hidden md:block">
+                <p className="text-white text-sm">20% de réduction.</p>
               </span>
             </div>
             <span

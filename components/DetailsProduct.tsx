@@ -5,16 +5,14 @@ interface DetailProps {
   image: string;
   name: string;
   price: number;
-  sold?: string;
   description: string;
-  color?: string;
+  rating?: number;
 }
 
 export default function DetailsProduct({
   image,
   name,
   price,
-  sold,
   description,
 }: // color,
 DetailProps) {
@@ -47,9 +45,7 @@ DetailProps) {
             <p className="text-black font-[family-name:var(--satoshibold-)] text-3xl">
               {`$${price}`}
             </p>
-            <p className="text-black/30  font-[family-name:var(--satoshibold-)] text-3xl line-through">
-              {`$${sold}`}
-            </p>
+
             <p className="font-[family-name:var(--satoshi-)] text-sm bg-red-50 border border-red-100 py-1 px-2 rounded-full text-red-500">
               -40%
             </p>

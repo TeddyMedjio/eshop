@@ -1,4 +1,4 @@
-import ProductDetail from "./ProductDetail";
+import ProductDetail from "./ProductCard";
 
 export default function AlsoLike() {
   return (
@@ -9,32 +9,13 @@ export default function AlsoLike() {
         </h2>
         <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
           {/* product */}
-          <ProductDetail
+          {/* <ProductDetail
             url="/images/vertical.png"
             title="Vertical Striped Shirt"
             reduction={`${-15}%`}
             price={`$${212}`}
             sold={`$${232}`}
-          />
-          {/* product */}
-          <ProductDetail
-            url="/images/courage.png"
-            price={`$${145}`}
-            title="Courage Graphic T-shirt"
-          />
-          {/* product */}
-          <ProductDetail
-            url="/images/loose.png"
-            price={`$${80}`}
-            title="Loose Fit Bermuda Shorts"
-          />
-
-          {/* product */}
-          <ProductDetail
-            url="/images/faded.png"
-            price={`$${210}`}
-            title="Faded Skinny Jeans"
-          />
+          /> */}
         </div>
       </div>
     </div>

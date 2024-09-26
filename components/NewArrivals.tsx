@@ -1,15 +1,29 @@
-import { Button } from "./Button";
+"use client";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import ProductDetail from "./ProductDetail";
 import { Product } from "@/lib/models/ProductModels";
+import { getProducts } from "@/api/requests";
+import { Button } from "./Button";
+import { Loader } from "lucide-react";
+import ProductCard from "./ProductCard";
 
-async function getProducts() {
-  const res = await fetch("https://ecommerce-data-tyi1.onrender.com/products");
-  return res.json();
-}
-
-export default async function NewArrivals() {
-  const products: Product[] = await getProducts();
+export default function NewArrivals() {
+  const [products, setProducts] = useState<Product[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const getData = async () => {
+      setLoading(true);
+      try {
+        const products: Product[] = await getProducts();
+        setProducts(products);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
 
   return (
     <div className="mx-auto container px-4 md:px-0 my-20 ">
@@ -17,22 +31,21 @@ export default async function NewArrivals() {
         <h2 className=" text-[40px] md:text-5xl font-[family-name:var(--integralcf-)]">
           Nouveautes
         </h2>
-        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
-          {/* product un */}
-          {products.slice(0, 4).map((product) => (
-            <div key={product.slug}>
-              <ProductDetail
-                link={product.slug}
-                url={product.image_url}
-                price={`$${product.price}`}
-                title={product.name}
-                sold={`$${product.sold}`}
-                color={product.color}
-                reduction=""
-              />
-            </div>
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center items-center my-16">
+            {" "}
+            <Loader size={32} className="animate-spin" />{" "}
+          </div>
+        ) : (
+          <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
+            {/* product */}
+            {products?.slice(0, 4).map((product) => (
+              <div key={Math.random() * 1000}>
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
+        )}
 
         <Link href="/nouveautes">
           <Button variant="outline" size="default">
