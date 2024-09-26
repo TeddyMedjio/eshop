@@ -45,15 +45,15 @@ export function Navigation() {
                   </span>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/collections/casual" title="Casual">
+              <ListItem href="/collections/cozy" title="Cozy">
                 Des classiques intemporels qui représentent le style
                 emblematique.
               </ListItem>
-              <ListItem href="/collections/formal" title="Formal">
+              <ListItem href="/collections/fresh" title="Fresh">
                 Dites vos propres règles et concrétisez vos ambitions avec un
                 style unique.
               </ListItem>
-              <ListItem href="/collections/party" title="Party">
+              <ListItem href="/collections/urban" title="Urban">
                 C&apos;est une nouvelle aventure! Assurer vous que votre enfant
                 dispose de tout ce qu&apos;il lui faut
               </ListItem>
