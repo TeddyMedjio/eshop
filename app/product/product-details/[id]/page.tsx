@@ -1,4 +1,4 @@
-import { getProductByCollections, getSingleProduct } from "@/api/requests";
+import { getSingleProduct } from "@/api/requests";
 import React from "react";
 import { Tailles } from "@/components/Tailles";
 import Image from "next/image";
