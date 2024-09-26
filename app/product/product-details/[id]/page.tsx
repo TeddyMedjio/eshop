@@ -54,7 +54,7 @@ export default async function ProductDetails({
             <div className="flex items-center">
               {starRating.map((star) => (
                 <StarFilledIcon
-                  key={star}
+                  key={Math.random() * 3000}
                   fill="yellow"
                   className="text-yellow-400 size-5"
                 />

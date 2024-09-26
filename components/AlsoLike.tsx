@@ -43,7 +43,7 @@ export default function AlsoLike({ product }: Props) {
               <div className="flex items-center">
                 {starRating.map((star) => (
                   <StarFilledIcon
-                    key={star}
+                    key={Math.random() * 3000}
                     fill="yellow"
                     className="text-yellow-400 size-5"
                   />
