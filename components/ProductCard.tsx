@@ -15,7 +15,6 @@ export default function ProductCard({ product }: Props) {
   const num = Math.round(product.rate);
   //   permet de creer un tableau content des nombres entiers venu du haut
   const starRating = new Array(num).fill(0);
-  console.log(starRating);
 
   return (
     <div className="space-y-2">

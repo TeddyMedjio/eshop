@@ -1,4 +1,4 @@
-import { Product } from "@/lib/models/ProductModels";
+import { Collection, Product } from "@/lib/models/ProductModels";
 import { getProductByCollections, getSingleProduct } from "@/api/requests";
 import React from "react";
 import { Tailles } from "@/components/Tailles";
@@ -7,6 +7,8 @@ import { BreadcrumbCustom } from "@/components/Breadcrumb";
 import { StarFilledIcon } from "@radix-ui/react-icons";
 import { Reviews } from "@/components/Reviews";
 import AlsoLike from "@/components/AlsoLike";
+import AjouterAuPanier from "./AjouterAuPanier";
+import ProductCard from "@/components/ProductCard";
 
 export default async function ProductDetails({
   params,
@@ -18,6 +20,8 @@ export default async function ProductDetails({
   const relatedProduct: Product[] = await getProductByCollections(
     singleProduct.collections
   );
+  console.log(relatedProduct);
+
   // permet de convertir les votes du nombre decimal au nombre entier
   const num = Math.round(singleProduct.rate);
   //   permet de creer un tableau content des nombres entiers venu du haut
@@ -90,6 +94,7 @@ export default async function ProductDetails({
             <div className="w-fit flex items-center gap-3">
               {singleProduct.color?.map((color) => (
                 <div
+                  key={Math.random() * 5000}
                   style={{ backgroundColor: `${color}` }}
                   className={` h-7 w-7 rounded-full border border-gray-400`}
                 ></div>
@@ -115,14 +120,24 @@ export default async function ProductDetails({
               <p className="text-black font-[family-name:var(--satoshi-)]">1</p>
               <p className="text-black font-[family-name:var(--satoshi-)]">+</p>
             </div>
-            <button className="bg-black font-[family-name:var(--satoshi-)] text-white flex-auto py-3 rounded-full">
-              Ajouter au Panier
-            </button>
+            {/* ajouter au panier */}
+            <AjouterAuPanier />
           </div>
         </div>
       </div>
-      <Reviews />
-      <AlsoLike />
+      <Reviews product={singleProduct} />
+
+      {/* Vous aimerez aussi */}
+      <div className="flex flex-col items-center justify-center my-20">
+        {/* <h2 className=" text-center md:text-left text-4xl md:text-5xl font-[family-name:var(--integralcf-)]">
+          Vous aimerez aussi
+        </h2>
+        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
+          {relatedProduct.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div> */}
+      </div>
     </div>
   );
 }

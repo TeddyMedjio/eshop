@@ -19,9 +19,9 @@ export async function getReviews() {
 }
 
 // Requets pour recuperer un product
-export async function getSingleProduct(id: string) {
+export async function getSingleProduct(slug: string) {
   const singleProductRes = await fetch(
-    `https://ecommerce-data-tyi1.onrender.com/products/${id}`
+    `https://ecommerce-data-tyi1.onrender.com/products/${slug}`
   );
   return singleProductRes.json();
 }

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PlusIcon } from "@heroicons/react/24/outline";
 import { Collection } from "@/lib/models/ProductModels";
 import { getCollections } from "@/api/requests";
 
@@ -9,30 +8,33 @@ export default async function Category() {
   return (
     <div className="md:mx-auto md:container px-4 my-20 ">
       <div className="flex flex-col items-center justify-center bg-gris rounded-3xl py-10 lg:py-20 px-8 lg:px-20">
-        <h2 className="text-center lg:text-left text-[40px] md:text-5xl font-[family-name:var(--integralcf-)]">
+        <h2 className="text-center lg:text-left text-[40px] md:text-5xl font-[family-name:var(--integralcf-)] mb-10">
           Nos Collections
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 w-full mt-12">
-          {collections.map((collection) => (
-            <div
-              key={collection.slug}
-              className={`bg-white md:first-of-type:col-span-1 md:last-of-type:col-span-1 md:odd:col-span-2 md:even:col-span-2 h-[190px] lg:h-[289px] rounded-lg overflow-hidden relative`}
+        <div className=" cursor-pointer w-full h-[520px] grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-6 ">
+          {collections.map((item: Collection) => (
+            <Link
+              href={`/collections/${item.collection_id}`}
+              key={item.name}
+              className="group overflow-hidden relative row-span-2 md:odd:row-span-1 border rounded-lg"
             >
-              <Link href={`/collections/${collection.slug}`} className="group">
-                <span className="lg:absolute bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 w-full h-full z-30">
-                  <PlusIcon className="size-14 text-white transition-all duration-300 opacity-0 group-hover:opacity-100 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30" />
-                </span>
-                <p className=" absolute top-5 left-5 text-black font-[family-name:var(--satoshibold-)] text-3xl z-20">
-                  {collection.name}
+              <Image
+                src={item.image_url}
+                width={500}
+                height={500}
+                alt={item.name}
+                className="w-full h-full object-cover"
+              />
+              <div className="z-50 absolute bottom-3 left-3 ">
+                <p className="text-gray-100 text-sm mb-1 lg:-translate-x-28 lg:group-hover:translate-x-0 lg:transition-all duration-400 font-[family-name:var(--satoshi-)]">
+                  {item.name}
                 </p>
-                <Image
-                  src={collection.image_url}
-                  fill={true}
-                  alt={`image ${collection.name}`}
-                  className=" absolute left-7 object-cover object-right-top"
-                />
-              </Link>
-            </div>
+                <h3 className="text-gray-50 text-xl font-[family-name:var(--satoshibold-)]">
+                  {item.description}
+                </h3>
+              </div>
+              <div className="absolute w-full top-0 bg-black h-full p-4 opacity-40 group-hover:opacity-50 transition-all duration-300 "></div>
+            </Link>
           ))}
         </div>
       </div>

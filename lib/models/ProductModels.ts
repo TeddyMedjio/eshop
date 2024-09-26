@@ -1,27 +1,28 @@
 export type Product = {
   id: number;
+  product_id: string;
   name: string;
-  slug: string;
-  image_url: string;
+  color?: [];
   price: number;
   rate: number;
+  image_url: string;
   description: string;
   collections: string;
-  color?: [];
   features: [];
   fabric: [];
   shipping: [];
 };
 export type Collection = {
+  collections: string;
   name: string;
-  slug: string;
   description: string;
   image_url: string;
+  created_at: string;
 };
 export type Review = {
   product_id: string;
   author: string;
-  rating: number;
+  rate: number;
   content: string;
   image_rating: string;
   created_at: string;

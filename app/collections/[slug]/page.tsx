@@ -2,6 +2,7 @@ import { getCollections, getProducts } from "@/api/requests";
 import { Accordeon } from "@/components/Accordeon";
 import { BreadcrumbCollection } from "@/components/BreadcrumCollection";
 import { FiltreMobile } from "@/components/FiltreMobile";
+import ProductCard from "@/components/ProductCard";
 import ProductNotFound from "@/components/ProductNotFound";
 import { Tailles } from "@/components/Tailles";
 import { Progress } from "@/components/ui/progress";
@@ -15,21 +16,21 @@ export default async function ProductCollection({
   params: { slug: string };
 }) {
   const collections: Collection[] = await getCollections();
-  const collection = collections.find((x) => x.slug === params.slug);
+  const collection = collections.find((x) => x.collections === params.slug);
   if (!collection) {
     return <ProductNotFound />;
   }
 
   const products: Product[] = await getProducts();
   const product = products.filter((product) =>
-    collection.slug.includes(product.collections)
+    collection.collections.includes(product.collections)
   );
 
   return (
     <div className="mx-auto container px-4 pb-20 mt-5 mb-20">
       {product.slice(0, 1).map((product) => (
         <BreadcrumbCollection
-          key={product.slug}
+          key={product.collections}
           product={product.collections}
         />
       ))}
@@ -50,31 +51,25 @@ export default async function ProductCollection({
           <div className="border-b border-b-black/10 py-5 space-y-4">
             <div className="flex items-center justify-between">
               <p className="font-[family-name:var(--satoshi-)] text-black/60">
-                T-shirts
+                All
               </p>
               <ChevronRightIcon className="text-black/60 size-4" />
             </div>
             <div className="flex items-center justify-between">
               <p className="font-[family-name:var(--satoshi-)] text-black/60">
-                Shorts
+                Urban
               </p>
               <ChevronRightIcon className="text-black/60 size-4" />
             </div>
             <div className="flex items-center justify-between">
               <p className="font-[family-name:var(--satoshi-)] text-black/60">
-                Shirts
+                Cozy
               </p>
               <ChevronRightIcon className="text-black/60 size-4" />
             </div>
             <div className="flex items-center justify-between">
               <p className="font-[family-name:var(--satoshi-)] text-black/60">
-                Hoodie
-              </p>
-              <ChevronRightIcon className="text-black/60 size-4" />
-            </div>
-            <div className="flex items-center justify-between">
-              <p className="font-[family-name:var(--satoshi-)] text-black/60">
-                Jeans
+                Fresh
               </p>
               <ChevronRightIcon className="text-black/60 size-4" />
             </div>
@@ -125,26 +120,26 @@ export default async function ProductCollection({
           <Accordeon title="Collections">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <p className="font-[family-name:var(--satoshi-)] text-black/60">
-                  Casual
+                <p className="text-base font-[family-name:var(--satoshi-)] text-black/60">
+                  All
                 </p>
                 <ChevronRightIcon className="text-black/60 size-4" />
               </div>
               <div className="flex items-center justify-between">
-                <p className="font-[family-name:var(--satoshi-)] text-black/60">
-                  Formal
+                <p className="text-base font-[family-name:var(--satoshi-)] text-black/60">
+                  Urban
                 </p>
                 <ChevronRightIcon className="text-black/60 size-4" />
               </div>
               <div className="flex items-center justify-between">
-                <p className="font-[family-name:var(--satoshi-)] text-black/60">
-                  Party
+                <p className="text-base font-[family-name:var(--satoshi-)] text-black/60">
+                  Cozy
                 </p>
                 <ChevronRightIcon className="text-black/60 size-4" />
               </div>
               <div className="flex items-center justify-between">
-                <p className="font-[family-name:var(--satoshi-)] text-black/60">
-                  Gym
+                <p className="text-base font-[family-name:var(--satoshi-)] text-black/60">
+                  Fresh
                 </p>
                 <ChevronRightIcon className="text-black/60 size-4" />
               </div>
@@ -171,9 +166,9 @@ export default async function ProductCollection({
 
           {/* Collection de produits */}
           <div className="flex flex-col md:flex-row flex-wrap items-center gap-10 md:gap-5 mt-10">
-            {/* {product.map((item) => (
-              <ProductDetail product={product} />
-            ))} */}
+            {product.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
           </div>
         </div>
       </div>
