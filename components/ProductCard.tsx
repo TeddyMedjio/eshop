@@ -52,6 +52,7 @@ export default function ProductCard({ product }: Props) {
       <div className="w-fit flex items-center gap-2">
         {product.color?.map((color) => (
           <div
+            key={Math.random() * 2000}
             style={{ backgroundColor: `${color}` }}
             className={` h-5 w-5 rounded-full border border-gray-400`}
           ></div>

@@ -25,54 +25,59 @@ export function Reviews({ product }: Props) {
               <h3 className="text-lg font-[family-name:var(--satoshibold-)] uppercase">
                 features
               </h3>
-              <ul className="space-y-1 font-[family-name:var(--satoshi-)] text-black/70 mt-3">
+              <div className="space-y-1 mt-3">
                 {product.features.map((item) => (
-                  <li
-                    key={Math.random() * 3000}
-                    className="flex items-center gap-2"
+                  <p
+                    key={Math.random() * 300}
+                    className="flex items-center gap-2 font-[family-name:var(--satoshi-)] text-black/70"
                   >
                     {" "}
-                    <CheckCircle size={16} />
+                    <span>
+                      <CheckCircle size={16} />
+                    </span>
                     {item}
-                  </li>
+                  </p>
                 ))}
-              </ul>
+              </div>
             </div>
             <div className="border p-4 rounded-lg bg-black/5">
               <h3 className="text-lg font-[family-name:var(--satoshibold-)] uppercase">
                 fabric
               </h3>
-              <ul className="space-y-1 font-[family-name:var(--satoshi-)] text-black/70 mt-3">
+              <div className="space-y-1 mt-3">
                 {product.fabric.map((item) => (
-                  <li
-                    key={Math.random() * 200}
-                    className="flex items-center gap-2"
+                  <p
+                    key={Math.random() * 300}
+                    className="flex items-center gap-2 font-[family-name:var(--satoshi-)] text-black/70"
                   >
                     {" "}
-                    <CheckCircle size={16} />
+                    <span>
+                      <CheckCircle size={16} />
+                    </span>
                     {item}
-                  </li>
+                  </p>
                 ))}
-              </ul>
+              </div>
             </div>
             <div className="border p-4 rounded-lg bg-black/5">
               <h3 className="text-lg font-[family-name:var(--satoshibold-)] uppercase">
                 shipping
               </h3>
-              <p className="font-[family-name:var(--satoshi-)] text-black/70">
-                <ul className="space-y-1 font-[family-name:var(--satoshi-)] text-black/70 mt-3">
-                  {product.shipping.map((item) => (
-                    <li
-                      key={Math.random() * 300}
-                      className="flex items-center gap-2"
-                    >
-                      {" "}
+
+              <div className="space-y-1 mt-3">
+                {product.shipping.map((item) => (
+                  <p
+                    key={Math.random() * 300}
+                    className="flex items-center gap-2 font-[family-name:var(--satoshi-)] text-black/70"
+                  >
+                    {" "}
+                    <span>
                       <CheckCircle size={16} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </p>
+                    </span>
+                    {item}
+                  </p>
+                ))}
+              </div>
             </div>
           </CardContent>
         </Card>

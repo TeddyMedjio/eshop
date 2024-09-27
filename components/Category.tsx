@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Collection } from "@/lib/models/ProductModels";
-import { getCollections } from "@/api/requests";
+import { getCollections } from "@/Request/requests";
 
 export default async function Category() {
   const collections: Collection[] = await getCollections();

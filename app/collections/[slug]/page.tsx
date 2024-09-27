@@ -1,4 +1,4 @@
-import { getCollections, getProducts } from "@/api/requests";
+import { getCollections, getProducts } from "@/Request/requests";
 import { Accordeon } from "@/components/Accordeon";
 import { BreadcrumbCollection } from "@/components/BreadcrumCollection";
 import { FiltreMobile } from "@/components/FiltreMobile";
@@ -16,22 +16,22 @@ export default async function ProductCollection({
   params: { slug: string };
 }) {
   const collections: Collection[] = await getCollections();
-  const collection = collections.find((x) => x.collections === params.slug);
+  const collection = collections.find((x) => x.collection === params.slug);
   if (!collection) {
     return <ProductNotFound />;
   }
 
   const products: Product[] = await getProducts();
   const product = products.filter((product) =>
-    collection.collections.includes(product.collections)
+    collection.collection.includes(product.collection)
   );
 
   return (
     <div className="mx-auto container px-4 pb-20 mt-5 mb-20">
       {product.slice(0, 1).map((product) => (
         <BreadcrumbCollection
-          key={product.collections}
-          product={product.collections}
+          key={product.collection}
+          product={product.collection}
         />
       ))}
       <div className="flex items-start gap-5 mt-10">

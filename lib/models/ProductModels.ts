@@ -2,18 +2,18 @@ export type Product = {
   id: number;
   product_id: string;
   name: string;
-  color?: [];
+  color: [];
   price: number;
   rate: number;
   image_url: string;
   description: string;
-  collections: string;
+  collection: string;
   features: [];
   fabric: [];
   shipping: [];
 };
 export type Collection = {
-  collections: string;
+  collection: string;
   name: string;
   description: string;
   image_url: string;

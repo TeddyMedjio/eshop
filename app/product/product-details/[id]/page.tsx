@@ -1,12 +1,12 @@
-import { getSingleProduct } from "@/api/requests";
+import { Product } from "@/lib/models/ProductModels";
+import { getProductByCollections, getSingleProduct } from "@/Request/requests";
 import React from "react";
-import { Tailles } from "@/components/Tailles";
 import Image from "next/image";
+import { Tailles } from "@/components/Tailles";
 import { BreadcrumbCustom } from "@/components/Breadcrumb";
 import { StarFilledIcon } from "@radix-ui/react-icons";
 import { Reviews } from "@/components/Reviews";
 import AjouterAuPanier from "./AjouterAuPanier";
-import { Product } from "@/lib/models/ProductModels";
 
 export default async function ProductDetails({
   params,
@@ -15,9 +15,10 @@ export default async function ProductDetails({
 }) {
   const id = params.id;
   const singleProduct: Product = await getSingleProduct(id);
-  // const relatedProduct: Product[] = await getProductByCollections(
-  //   singleProduct.collections
-  // );
+  const relatedProduct: Product[] = await getProductByCollections(
+    singleProduct.collection
+  );
+  console.log(relatedProduct);
 
   // permet de convertir les votes du nombre decimal au nombre entier
   const num = Math.round(singleProduct.rate);
@@ -27,8 +28,8 @@ export default async function ProductDetails({
   return (
     <div className="mx-auto container px-4 md:px-0 pb-20  ">
       <BreadcrumbCustom
-        link={singleProduct.collections}
-        collection={singleProduct.collections}
+        link={singleProduct.collection}
+        collection={singleProduct.collection}
         product={singleProduct.name}
       />
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 mb-20 ">

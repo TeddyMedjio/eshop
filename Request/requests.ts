@@ -19,17 +19,17 @@ export async function getReviews() {
 }
 
 // Requets pour recuperer un product
-export async function getSingleProduct(slug: string) {
+export async function getSingleProduct(id: string) {
   const singleProductRes = await fetch(
-    `https://ecommerce-data-tyi1.onrender.com/products/${slug}`
+    `https://ecommerce-data-tyi1.onrender.com/products/${id}`
   );
   return singleProductRes.json();
 }
 
 // Requets pour recuperer toutes les collections
-export async function getProductByCollections(collections: string) {
+export async function getProductByCollections(collection: string) {
   const productByCategoryRes = await fetch(
-    `https://ecommerce-data-tyi1.onrender.com/collections/${collections}`
+    `https://ecommerce-data-tyi1.onrender.com/products/collections/${collection}`
   );
   return productByCategoryRes.json();
 }

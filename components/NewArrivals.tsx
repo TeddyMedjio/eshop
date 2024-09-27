@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Product } from "@/lib/models/ProductModels";
-import { getProducts } from "@/api/requests";
+import { getProducts } from "@/Request/requests";
 import { Button } from "./Button";
 import { Loader } from "lucide-react";
 import ProductCard from "./ProductCard";
@@ -40,9 +40,7 @@ export default function NewArrivals() {
           <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
             {/* product */}
             {products?.slice(0, 4).map((product) => (
-              <div key={Math.random() * 1000}>
-                <ProductCard product={product} />
-              </div>
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         )}

@@ -3,7 +3,7 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 import { AdjustmentsVerticalIcon } from "@heroicons/react/24/solid";
 import { ComboBox } from "./Combobox";
 import { Review } from "@/lib/models/ProductModels";
-import { getReviews } from "@/api/requests";
+import { getReviews } from "@/Request/requests";
 import { useEffect, useState } from "react";
 import { Loader } from "lucide-react";
 
