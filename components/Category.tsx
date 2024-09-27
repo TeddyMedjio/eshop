@@ -14,7 +14,7 @@ export default async function Category() {
         <div className=" cursor-pointer w-full h-[520px] grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-2 md:gap-6 ">
           {collections.map((item: Collection) => (
             <Link
-              href={`/collections/${item.collections}`}
+              href={`/collections/${item.collection}`}
               key={item.name}
               className="group overflow-hidden relative row-span-2 md:odd:row-span-1 border rounded-lg"
             >
