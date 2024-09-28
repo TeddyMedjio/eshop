@@ -18,7 +18,7 @@ export default function ProductNotFound() {
           Votre recherche ne correspond à aucun produits.
         </p>
         <p className=" capitalize text-gray-400 text-xl md:text-2xl">
-          S'il vous plait Réessayer.
+          S&apos;il vous plait Réessayer.
         </p>
       </div>
     </div>

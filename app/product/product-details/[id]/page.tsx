@@ -116,7 +116,7 @@ export default async function ProductDetails({
           <div className="w-full flex items-center gap-3 pt-6">
             <QuantityCart product={singleProduct} />
             {/* ajouter au panier */}
-            <AjouterAuPanier product={singleProduct} />
+            <AjouterAuPanier />
           </div>
         </div>
       </div>

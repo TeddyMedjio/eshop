@@ -33,6 +33,7 @@ const toastVariants = cva(
         destructive:
           "destructive group border-destructive bg-destructive text-destructive-foreground",
         success: "bg-green-700 text-white font-[family-name:var(--satoshi-)]",
+        danger: "bg-red-700 text-white font-[family-name:var(--satoshi-)]",
       },
     },
     defaultVariants: {
