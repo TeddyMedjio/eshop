@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Navinfo from "@/components/Navinfo";
 import { ClerkProvider } from "@clerk/nextjs";
+import StoreProvider from "@/StoreProvider/StoreProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 const satoshi = localFont({
   src: "./fonts/SatoshiRegular.woff",
@@ -33,17 +35,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${satoshi.variable} ${satoshibold.variable} ${integralcf.variable} antialiased scroll-smooth`}
-        >
-          <Navinfo />
-          <Navbar />
-          {children}
-          <Footer />
-        </body>
-      </html>
-    </ClerkProvider>
+    <StoreProvider>
+      <ClerkProvider>
+        <html lang="en">
+          <body
+            className={`${satoshi.variable} ${satoshibold.variable} ${integralcf.variable} antialiased scroll-smooth`}
+          >
+            <Navinfo />
+            <Navbar />
+            {children}
+            <Toaster />
+            <Footer />
+          </body>
+        </html>
+      </ClerkProvider>
+    </StoreProvider>
   );
 }

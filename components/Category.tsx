@@ -26,7 +26,7 @@ export default async function Category() {
                 className="w-full h-full object-cover"
               />
               <div className="z-50 absolute bottom-3 left-3 ">
-                <p className="text-gray-100 text-sm mb-1 lg:-translate-x-28 lg:group-hover:translate-x-0 lg:transition-all duration-400 font-[family-name:var(--satoshi-)]">
+                <p className="text-gray-100 text-sm md:text-lg mb-1 lg:-translate-x-32 lg:group-hover:translate-x-0 transition-all duration-300 font-[family-name:var(--satoshi-)]">
                   {item.name}
                 </p>
                 <h3 className="text-gray-50 text-xl font-[family-name:var(--satoshibold-)]">

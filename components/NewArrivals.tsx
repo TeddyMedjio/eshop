@@ -40,7 +40,9 @@ export default function NewArrivals() {
           <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-10 md:gap-5 w-full my-12">
             {/* product */}
             {products?.slice(0, 4).map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <div key={product.id}>
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
         )}

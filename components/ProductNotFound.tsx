@@ -11,14 +11,14 @@ export default function ProductNotFound() {
         className="text-gray-400"
       />
       <div className="py-5 space-y-3">
-        <p className=" capitalize text-gray-400 text-3xl md:text-5xl font-semibold">
-          No Products found
+        <p className="  text-gray-400 text-3xl md:text-5xl font-semibold">
+          Aucun produits trouvés
         </p>
         <p className=" capitalize text-gray-400 text-xl md:text-2xl">
-          your search did not match any products.
+          Votre recherche ne correspond à aucun produits.
         </p>
         <p className=" capitalize text-gray-400 text-xl md:text-2xl">
-          please try again.
+          S'il vous plait Réessayer.
         </p>
       </div>
     </div>

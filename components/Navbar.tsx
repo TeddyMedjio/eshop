@@ -1,6 +1,5 @@
 "use client";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { UserCircleIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -8,6 +7,7 @@ import { MobileMenu } from "./MobileMenu";
 import { ResearchMobile } from "./ResearchMobile";
 import { Navigation } from "./MenuList";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import ShopingCart from "./ShopingCart";
 
 export default function Navbar() {
   return (
@@ -41,13 +41,8 @@ export default function Navbar() {
         {/* panier et profil */}
         <div className="flex items-center gap-2">
           <ResearchMobile />
-          <Link href="/cart" className="relative">
-            <p className="absolute -top-3 -left-1 bg-black rounded-full px-2 text-white text-sm">
-              3
-            </p>
-            <ShoppingCartIcon className=" size-7 md:size-6 text-black" />
-          </Link>
-
+          {/* shoppingcart page */}
+          <ShopingCart />
           {/* SIGNIN USER */}
           <SignedIn>
             <UserButton />

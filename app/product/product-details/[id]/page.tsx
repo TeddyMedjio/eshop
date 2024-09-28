@@ -7,6 +7,7 @@ import { BreadcrumbCustom } from "@/components/Breadcrumb";
 import { StarFilledIcon } from "@radix-ui/react-icons";
 import { Reviews } from "@/components/Reviews";
 import AjouterAuPanier from "./AjouterAuPanier";
+import QuantityCart from "@/components/QuantityCart";
 
 export default async function ProductDetails({
   params,
@@ -95,7 +96,7 @@ export default async function ProductDetails({
                   key={Math.random() * 5000}
                   style={{ backgroundColor: `${color}` }}
                   className={` h-7 w-7 rounded-full border border-gray-400`}
-                ></div>
+                />
               ))}
             </div>
           </div>
@@ -113,13 +114,9 @@ export default async function ProductDetails({
           </div>
           {/* Button add cart */}
           <div className="w-full flex items-center gap-3 pt-6">
-            <div className="max-w-[200px] flex-1 flex items-center justify-around bg-gris font-[family-name:var(--satoshibold-)] text-white w-full py-3 rounded-full">
-              <p className="text-black font-[family-name:var(--satoshi-)]">-</p>
-              <p className="text-black font-[family-name:var(--satoshi-)]">1</p>
-              <p className="text-black font-[family-name:var(--satoshi-)]">+</p>
-            </div>
+            <QuantityCart product={singleProduct} />
             {/* ajouter au panier */}
-            <AjouterAuPanier />
+            <AjouterAuPanier product={singleProduct} />
           </div>
         </div>
       </div>

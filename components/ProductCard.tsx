@@ -5,6 +5,8 @@ import { PlusIcon } from "@heroicons/react/24/solid";
 import { StarFilledIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { addItem } from "@/app/store/cartSlice";
 
 interface Props {
   product: Product;
@@ -15,6 +17,12 @@ export default function ProductCard({ product }: Props) {
   const num = Math.round(product.rate);
   //   permet de creer un tableau content des nombres entiers venu du haut
   const starRating = new Array(num).fill(0);
+
+  const dispatch = useDispatch();
+
+  const addToCarHandler = (product: Product) => {
+    dispatch(addItem(product));
+  };
 
   return (
     <div className="space-y-2">
