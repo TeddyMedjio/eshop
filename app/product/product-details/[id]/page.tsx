@@ -19,7 +19,6 @@ export default async function ProductDetails({
   const relatedProduct: Product[] = await getProductByCollections(
     singleProduct.collection
   );
-  console.log(relatedProduct);
 
   // permet de convertir les votes du nombre decimal au nombre entier
   const num = Math.round(singleProduct.rate);

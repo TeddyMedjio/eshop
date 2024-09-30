@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { useDispatch } from "react-redux";
 
 export default function AjouterAuPanier() {
   return (

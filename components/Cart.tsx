@@ -1,20 +1,49 @@
 "use client";
 
 import { TagIcon } from "@heroicons/react/24/outline";
-import { addItem, CartItem, removeItem } from "@/app/store/cartSlice";
+import {
+  addItem,
+  CartItem,
+  clearCart,
+  removeItem,
+} from "@/app/store/cartSlice";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { TrashIcon } from "lucide-react";
+import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
+import PaypalButton from "./PaypalButton";
+import { useRouter } from "next/navigation";
 
 interface Props {
   items: CartItem[];
 }
 
 export default function Cart({ items }: Props) {
+  const router = useRouter();
+
   const dispatch = useDispatch();
 
   const addCartHandler = (item: CartItem) => dispatch(addItem(item));
   const removeCartHandler = (id: number) => dispatch(removeItem({ id }));
+
+  // Prix total
+  const totalPrice = items
+    .reduce((total, item) => total + item.price * item.quantity, 0)
+    .toFixed(2);
+  //calcule taxe (10%)
+  const taxe = (+totalPrice * 0.1).toFixed(2);
+  //total prix avec taxe
+  const totalpriceWithTaxe = (+totalPrice + +taxe).toFixed(2);
+
+  // authentification de l'utilisateur
+  const { user } = useUser();
+
+  //   confirmer le paiement
+  const handleSuccess = (details: any) => {
+    router.push("/success");
+    dispatch(clearCart());
+  };
 
   return (
     <div className="mt-10">
@@ -120,7 +149,7 @@ export default function Cart({ items }: Props) {
                       Total Article
                     </p>
                     <p className="font-[family-name:var(--satoshibold-)] text-black text-xl">
-                      {`$${(item?.price * item?.quantity).toFixed(2)}`}
+                      {`$${totalPrice}`}
                     </p>
                   </div>
                   <div className="flex items-center justify-between">
@@ -128,7 +157,7 @@ export default function Cart({ items }: Props) {
                       Reduction <span className="text-black">(-10%)</span>
                     </p>
                     <p className="font-[family-name:var(--satoshibold-)] text-red-500 text-xl">
-                      {`$${(item?.price * item?.quantity * 0.1).toFixed(2)}`}
+                      {`$${taxe}`}
                     </p>
                   </div>
                   <div className="flex items-center justify-between">
@@ -156,11 +185,7 @@ export default function Cart({ items }: Props) {
                       Total
                     </p>
                     <p className="font-[family-name:var(--satoshibold-)] text-black text-2xl">
-                      {`$${(
-                        item?.price * item?.quantity -
-                        item?.price * item?.quantity * 0.1 -
-                        (item?.price * item?.quantity < 100 ? 0 : 15)
-                      ).toFixed(2)}`}
+                      {`$${totalpriceWithTaxe}`}
                     </p>
                   </div>
                   {/* code promo et checkout */}
@@ -180,10 +205,21 @@ export default function Cart({ items }: Props) {
                         Appliquer
                       </button>
                     </div>
-                    {/* checkout button */}
-                    <button className="bg-black font-[family-name:var(--satoshi-)] text-white w-full py-4 rounded-full">
-                      Commander
-                    </button>
+                    {/* button commander */}
+                    {!user && (
+                      <div className="bg-black font-[family-name:var(--satoshi-)] text-white w-full py-4 rounded-full text-center">
+                        <Link href="/sign-in">Veillez vous connecter</Link>
+                      </div>
+                    )}
+                    {user && (
+                      // <button className="bg-black font-[family-name:var(--satoshi-)] text-white w-full py-4 rounded-full">
+                      //   Commander
+                      // </button>
+                      <PaypalButton
+                        amount={totalpriceWithTaxe}
+                        onSuccess={handleSuccess}
+                      />
+                    )}
                   </div>
                 </div>
               </div>
