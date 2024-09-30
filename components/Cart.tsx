@@ -36,6 +36,8 @@ export default function Cart({ items }: Props) {
   //total prix avec taxe
   const totalpriceWithTaxe = (+totalPrice + +taxe).toFixed(2);
 
+  // Si plus grand que 100$ ajouter livraison
+
   // authentification de l'utilisateur
   const { user } = useUser();
 
@@ -44,6 +46,12 @@ export default function Cart({ items }: Props) {
     router.push("/success");
     dispatch(clearCart());
   };
+  //   confirmer le paiement
+  const deleteProduct = (id: number) => {
+    dispatch(removeCartHandler(id));
+  };
+
+  const free = 0;
 
   return (
     <div className="mt-10">
@@ -65,11 +73,14 @@ export default function Cart({ items }: Props) {
         </div>
       )}
       {items.length > 0 && (
-        <div className="flex flex-col md:flex-row gap-4 mt-10 ">
+        <div className="flex flex-col items-start md:flex-row gap-4 mt-10 ">
           {/* Articles */}
           <div className="border border-black/10 px-4 rounded-lg flex-1">
             {items.map((item) => (
-              <div className="flex items-center gap-5 w-full py-4">
+              <div
+                key={item.id}
+                className="flex items-center gap-5 w-full py-4"
+              >
                 <div className="relative h-[99px] w-[99px]  md:h-[124px] md:w-[124px] ">
                   <Image
                     src={item.image_url}
@@ -85,21 +96,21 @@ export default function Cart({ items }: Props) {
                     <p className=" text-base md:text-xl font-[family-name:var(--satoshibold-)]">
                       {item.name}
                     </p>
-                    <button>
+                    <button onClick={() => deleteProduct(item.id)}>
                       <TrashIcon className="size-5 text-red-500" />
                     </button>
                   </div>
                   <p className=" text-xs md:text-sm font-[family-name:var(--satoshi-)] text-black/40">
                     Size: <span className="text-black">xl</span>
                   </p>
-                  {item.color.map((color) => (
-                    <p className=" text-xs md:text-sm font-[family-name:var(--satoshi-)] text-black/40 flex items-center capitalize gap-2">
-                      Couleur:{" "}
+                  <p className=" text-xs md:text-sm font-[family-name:var(--satoshi-)] text-black/40 flex items-center capitalize gap-2">
+                    Couleur:{" "}
+                    {item.color.map((color) => (
                       <span className="text-black flex items-center gap-2">
                         {color}
                       </span>
-                    </p>
-                  ))}
+                    ))}
+                  </p>
                   {/* Prix total et ajouter nombre d'articles */}
                   <div className="flex items-center justify-between pt-3">
                     <div className="flex items-center gap-2">
@@ -133,98 +144,88 @@ export default function Cart({ items }: Props) {
               </div>
             ))}
           </div>
-
           {/* Votre commande  */}
-          {items.map((item) => {
-            return (
-              <div className="border border-black/10 p-4 rounded-lg flex-1">
-                <p className="font-[family-name:var(--satoshibold-)] text-xl">
-                  Votre Commande
+          <div className="border border-black/10 p-4 rounded-lg flex-1">
+            <p className="font-[family-name:var(--satoshibold-)] text-xl">
+              Votre Commande
+            </p>
+            {/* calcule facture */}
+
+            <div className=" mt-5 space-y-2 border-b border-b-black-10 pb-5">
+              <div className="flex items-center justify-between">
+                <p className="font-[family-name:var(--satoshi-)] text-black/40 text-xl">
+                  Total Article
                 </p>
-                {/* calcule facture */}
-
-                <div className=" mt-5 space-y-2 border-b border-b-black-10 pb-5">
-                  <div className="flex items-center justify-between">
-                    <p className="font-[family-name:var(--satoshi-)] text-black/40 text-xl">
-                      Total Article
-                    </p>
-                    <p className="font-[family-name:var(--satoshibold-)] text-black text-xl">
-                      {`$${totalPrice}`}
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <p className="font-[family-name:var(--satoshi-)] text-black/40 text-xl">
-                      Reduction <span className="text-black">(-10%)</span>
-                    </p>
-                    <p className="font-[family-name:var(--satoshibold-)] text-red-500 text-xl">
-                      {`$${taxe}`}
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <p className="font-[family-name:var(--satoshi-)] text-black/40 text-xl">
-                      Livraison
-                    </p>
-                    {item?.price * item?.quantity < 100 && (
-                      <p className="font-[family-name:var(--satoshibold-)] text-black text-xl">
-                        $0
-                      </p>
-                    )}
-                    {item?.price * item?.quantity > 100 && (
-                      <p className="font-[family-name:var(--satoshibold-)] text-black text-xl">
-                        $15
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                {/* Total */}
-
-                <div className="my-5">
-                  <div className="flex items-center justify-between mb-5">
-                    <p className="font-[family-name:var(--satoshi-)] text-black text-xl">
-                      Total
-                    </p>
-                    <p className="font-[family-name:var(--satoshibold-)] text-black text-2xl">
-                      {`$${totalpriceWithTaxe}`}
-                    </p>
-                  </div>
-                  {/* code promo et checkout */}
-                  <div className="w-full space-y-4">
-                    <div className="flex items-center gap-4">
-                      {/* barre de recherche */}
-                      <div className="flex-auto relative">
-                        <input
-                          type="search"
-                          name="search"
-                          placeholder="Code promo"
-                          className=" bg-gris pl-10 py-4 rounded-full w-full placeholder-black/50 outline-none"
-                        />
-                        <TagIcon className="size-6 text-black/50 absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 left-5" />
-                      </div>
-                      <button className="bg-black font-[family-name:var(--satoshi-)] text-white py-4 rounded-full w-[150px]">
-                        Appliquer
-                      </button>
-                    </div>
-                    {/* button commander */}
-                    {!user && (
-                      <div className="bg-black font-[family-name:var(--satoshi-)] text-white w-full py-4 rounded-full text-center">
-                        <Link href="/sign-in">Veillez vous connecter</Link>
-                      </div>
-                    )}
-                    {user && (
-                      // <button className="bg-black font-[family-name:var(--satoshi-)] text-white w-full py-4 rounded-full">
-                      //   Commander
-                      // </button>
-                      <PaypalButton
-                        amount={totalpriceWithTaxe}
-                        onSuccess={handleSuccess}
-                      />
-                    )}
-                  </div>
-                </div>
+                <p className="font-[family-name:var(--satoshibold-)] text-black text-xl">
+                  {`$${totalPrice}`}
+                </p>
               </div>
-            );
-          })}
+              <div className="flex items-center justify-between">
+                <p className="font-[family-name:var(--satoshi-)] text-black/40 text-xl">
+                  Reduction <span className="text-black">(-10%)</span>
+                </p>
+                <p className="font-[family-name:var(--satoshibold-)] text-red-500 text-xl">
+                  {`$${taxe}`}
+                </p>
+              </div>
+              <div className="flex items-center justify-between">
+                <p className="font-[family-name:var(--satoshi-)] text-black/40 text-xl">
+                  Livraison
+                </p>
+
+                <p className="font-[family-name:var(--satoshibold-)] text-black text-xl">
+                  Free
+                </p>
+              </div>
+            </div>
+
+            {/* Total */}
+
+            <div className="my-5">
+              <div className="flex items-center justify-between mb-5">
+                <p className="font-[family-name:var(--satoshi-)] text-black text-xl">
+                  Total
+                </p>
+
+                <p className="font-[family-name:var(--satoshibold-)] text-black text-2xl">
+                  {totalpriceWithTaxe}
+                </p>
+              </div>
+              {/* code promo et checkout */}
+              <div className="w-full space-y-4">
+                <div className="flex items-center gap-4">
+                  {/* barre de recherche */}
+                  <div className="flex-auto relative">
+                    <input
+                      type="search"
+                      name="search"
+                      placeholder="Code promo"
+                      className=" bg-gris pl-10 py-4 rounded-full w-full placeholder-black/50 outline-none"
+                    />
+                    <TagIcon className="size-6 text-black/50 absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 left-5" />
+                  </div>
+                  <button className="bg-black font-[family-name:var(--satoshi-)] text-white py-4 rounded-full w-[150px]">
+                    Appliquer
+                  </button>
+                </div>
+                {/* button commander */}
+                {!user && (
+                  <div className="bg-black font-[family-name:var(--satoshi-)] text-white w-full py-4 rounded-full text-center">
+                    <Link href="/sign-in">Veillez vous connecter</Link>
+                  </div>
+                )}
+                {user && (
+                  // <button className="bg-black font-[family-name:var(--satoshi-)] text-white w-full py-4 rounded-full">
+                  //   Commander
+                  // </button>
+                  <PaypalButton
+                    amount={totalpriceWithTaxe}
+                    onSuccess={handleSuccess}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

@@ -8,6 +8,7 @@ import { StarFilledIcon } from "@radix-ui/react-icons";
 import { Reviews } from "@/components/Reviews";
 import AjouterAuPanier from "./AjouterAuPanier";
 import QuantityCart from "@/components/QuantityCart";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default async function ProductDetails({
   params,
@@ -91,10 +92,10 @@ export default async function ProductDetails({
 
             <div className="w-fit flex items-center gap-3">
               {singleProduct.color?.map((color) => (
-                <div
+                <Checkbox
                   key={Math.random() * 5000}
                   style={{ backgroundColor: `${color}` }}
-                  className={` h-7 w-7 rounded-full border border-gray-400`}
+                  className="h-7 w-7 rounded-full border border-gray-400 "
                 />
               ))}
             </div>
@@ -115,7 +116,7 @@ export default async function ProductDetails({
           <div className="w-full flex items-center gap-3 pt-6">
             <QuantityCart product={singleProduct} />
             {/* ajouter au panier */}
-            <AjouterAuPanier />
+            <AjouterAuPanier product={singleProduct} />
           </div>
         </div>
       </div>
