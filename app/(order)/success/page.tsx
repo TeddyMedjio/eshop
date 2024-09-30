@@ -11,7 +11,7 @@ export default function page() {
           Merci pour votre achat!
         </h1>
         <Link href="/" className="underline  text-gray-400 text-xl md:text-2xl">
-          Retourner à l'acceuil.
+          Retourner à l&apos;acceuil.
         </Link>
       </div>
     </div>
