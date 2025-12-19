@@ -10,7 +10,6 @@ import {
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { TrashIcon } from "lucide-react";
-import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import PaypalButton from "./PaypalButton";
 import { useRouter } from "next/navigation";
@@ -38,11 +37,8 @@ export default function Cart({ items }: Props) {
 
   // Si plus grand que 100$ ajouter livraison
 
-  // authentification de l'utilisateur
-  const { user } = useUser();
-
   //   confirmer le paiement
-  const handleSuccess = (details: any) => {
+  const handleSuccess = () => {
     router.push("/success");
     dispatch(clearCart());
   };
@@ -50,8 +46,6 @@ export default function Cart({ items }: Props) {
   const deleteProduct = (id: number) => {
     dispatch(removeCartHandler(id));
   };
-
-  const free = 0;
 
   return (
     <div className="mt-10">
@@ -209,20 +203,10 @@ export default function Cart({ items }: Props) {
                   </button>
                 </div>
                 {/* button commander */}
-                {!user && (
-                  <div className="bg-black font-[family-name:var(--satoshi-)] text-white w-full py-4 rounded-full text-center">
-                    <Link href="/sign-in">Veillez vous connecter</Link>
-                  </div>
-                )}
-                {user && (
-                  // <button className="bg-black font-[family-name:var(--satoshi-)] text-white w-full py-4 rounded-full">
-                  //   Commander
-                  // </button>
-                  <PaypalButton
-                    amount={totalpriceWithTaxe}
-                    onSuccess={handleSuccess}
-                  />
-                )}
+                <PaypalButton
+                  amount={totalpriceWithTaxe}
+                  onSuccess={handleSuccess}
+                />
               </div>
             </div>
           </div>

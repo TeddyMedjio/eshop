@@ -6,7 +6,6 @@ import Image from "next/image";
 import { MobileMenu } from "./MobileMenu";
 import { ResearchMobile } from "./ResearchMobile";
 import { Navigation } from "./MenuList";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import ShopingCart from "./ShopingCart";
 
 export default function Navbar() {
@@ -43,16 +42,8 @@ export default function Navbar() {
           <ResearchMobile />
           {/* shoppingcart page */}
           <ShopingCart />
-          {/* SIGNIN USER */}
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          {/* not SIGNIN USER */}
-          <SignedOut>
-            <SignInButton>
-              <UserCircleIcon className=" size-7 md:size-6 text-black cursor-pointer" />
-            </SignInButton>
-          </SignedOut>
+          {/* User profile */}
+          <UserCircleIcon className=" size-7 md:size-6 text-black cursor-pointer" />
         </div>
       </div>
     </nav>

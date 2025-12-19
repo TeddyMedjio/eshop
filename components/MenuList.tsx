@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import {
@@ -13,8 +14,24 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 export function Navigation() {
+  const { scrollToSection } = useSmoothScroll();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
+  const handleSectionClick = (e: React.MouseEvent, sectionId: string) => {
+    e.preventDefault();
+
+    if (isHomePage) {
+      scrollToSection(sectionId);
+    } else {
+      // Si on n'est pas sur la page d'accueil, on navigue d'abord vers celle-ci
+      window.location.href = `/#${sectionId}`;
+    }
+  };
+
   return (
     <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
@@ -61,25 +78,31 @@ export function Navigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="#" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              En Vente
-            </NavigationMenuLink>
-          </Link>
+          <a
+            href="#en-vente"
+            onClick={(e) => handleSectionClick(e, "en-vente")}
+            className={navigationMenuTriggerStyle()}
+          >
+            En Vente
+          </a>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="#" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Nouveautés
-            </NavigationMenuLink>
-          </Link>
+          <a
+            href="#nouveautes"
+            onClick={(e) => handleSectionClick(e, "nouveautes")}
+            className={navigationMenuTriggerStyle()}
+          >
+            Nouveautés
+          </a>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="#" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Brands
-            </NavigationMenuLink>
-          </Link>
+          <a
+            href="#categories"
+            onClick={(e) => handleSectionClick(e, "categories")}
+            className={navigationMenuTriggerStyle()}
+          >
+            Catégories
+          </a>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

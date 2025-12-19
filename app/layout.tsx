@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Navinfo from "@/components/Navinfo";
-import { ClerkProvider } from "@clerk/nextjs";
 import StoreProvider from "@/StoreProvider/StoreProvider";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -36,19 +35,17 @@ export default function RootLayout({
 }>) {
   return (
     <StoreProvider>
-      <ClerkProvider>
-        <html lang="en">
-          <body
-            className={`${satoshi.variable} ${satoshibold.variable} ${integralcf.variable} antialiased scroll-smooth`}
-          >
-            <Navinfo />
-            <Navbar />
-            {children}
-            <Toaster />
-            <Footer />
-          </body>
-        </html>
-      </ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${satoshi.variable} ${satoshibold.variable} ${integralcf.variable} antialiased scroll-smooth`}
+        >
+          <Navinfo />
+          <Navbar />
+          {children}
+          <Toaster />
+          <Footer />
+        </body>
+      </html>
     </StoreProvider>
   );
 }
